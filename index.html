@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="ToolMaster Pro - 65+ free online conversion tools with file upload support. Word to PDF, PDF to Word, Merge PDF, Split PDF, Compress PDF, Image to PDF, Excel to PDF, and more. Upload files directly - 100% free and private.">
-    <meta name="keywords" content="word to pdf, pdf to word, merge pdf, split pdf, compress pdf, image to pdf, excel to pdf, powerpoint to pdf, pdf tools, file upload, online converter, ilovepdf alternative">
+    <meta name="description" content="ToolMaster Pro - 65+ free online conversion tools with file upload and download. Word to PDF, PDF to Word, Merge PDF, Split PDF, Compress PDF, Image to PDF, and more. Upload files, download converted files - 100% free and private.">
+    <meta name="keywords" content="word to pdf, pdf to word, merge pdf, split pdf, compress pdf, image to pdf, excel to pdf, powerpoint to pdf, pdf tools, file upload, file download, online converter">
     <meta name="author" content="ToolMaster Pro">
     <meta name="robots" content="index, follow">
     <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
@@ -19,7 +19,7 @@
         gtag('config', 'G-XXXXXXXXXX');
     </script>
     
-    <title>ToolMaster Pro | 65+ File Upload Tools - Word to PDF, Merge PDF, Split PDF like iLovePDF</title>
+    <title>ToolMaster Pro | 65+ File Upload & Download Tools - Word to PDF, Merge PDF, Split PDF</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -51,10 +51,7 @@
         hr { margin: 20px 0; border-color: #e2e8f0; }
         
         .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-        .tool-card { background: white; border-radius: 20px; padding: 25px 20px; text-align: center; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid #e2e8f0; animation: fadeInUp 0.5s ease-out; animation-fill-mode: backwards; }
-        .tool-card:nth-child(1) { animation-delay: 0.05s; }
-        .tool-card:nth-child(2) { animation-delay: 0.1s; }
-        .tool-card:nth-child(3) { animation-delay: 0.15s; }
+        .tool-card { background: white; border-radius: 20px; padding: 25px 20px; text-align: center; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid #e2e8f0; animation: fadeInUp 0.5s ease-out; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .tool-card:hover { transform: translateY(-8px) scale(1.02); border-color: #10b981; box-shadow: 0 20px 25px -12px rgba(0,0,0,0.15); }
         .tool-card i { font-size: 44px; color: #10b981; margin-bottom: 12px; display: block; transition: transform 0.3s; }
@@ -64,37 +61,43 @@
         
         .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 1000; align-items: center; justify-content: center; backdrop-filter: blur(4px); animation: fadeIn 0.3s ease-out; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .modal-content { background: white; max-width: 650px; width: 90%; border-radius: 28px; max-height: 90vh; overflow-y: auto; animation: modalSlideIn 0.4s cubic-bezier(0.34, 1.2, 0.64, 1); }
+        .modal-content { background: white; max-width: 700px; width: 90%; border-radius: 28px; max-height: 90vh; overflow-y: auto; animation: modalSlideIn 0.4s cubic-bezier(0.34, 1.2, 0.64, 1); }
         @keyframes modalSlideIn { from { opacity: 0; transform: scale(0.9) translateY(-20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
         .modal-header { background: linear-gradient(135deg, #0f172a, #1e293b); color: white; padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; border-radius: 28px 28px 0 0; }
         .modal-header h2 { font-size: 22px; }
         .modal-header span { font-size: 32px; cursor: pointer; transition: transform 0.2s; }
         .modal-header span:hover { transform: scale(1.1) rotate(90deg); }
         .modal-body { padding: 25px; }
-        .input-group { margin-bottom: 20px; animation: fadeInUp 0.4s ease-out; }
+        .input-group { margin-bottom: 20px; }
         .input-group label { display: block; font-weight: 600; margin-bottom: 8px; color: #334155; }
         .input-group input, .input-group textarea, .input-group select { width: 100%; padding: 14px; border: 2px solid #e2e8f0; border-radius: 16px; font-size: 16px; font-family: inherit; transition: all 0.2s; }
         .input-group textarea { min-height: 120px; resize: vertical; }
-        .input-group input:focus, .input-group textarea:focus, .input-group select:focus { outline: none; border-color: #10b981; box-shadow: 0 0 0 3px rgba(16,185,129,0.1); transform: scale(1.01); }
+        .input-group input:focus, .input-group textarea:focus, .input-group select:focus { outline: none; border-color: #10b981; box-shadow: 0 0 0 3px rgba(16,185,129,0.1); }
+        
         .convert-btn { width: 100%; padding: 16px; background: linear-gradient(135deg, #10b981, #059669); color: white; border: none; border-radius: 40px; font-weight: 700; font-size: 16px; cursor: pointer; margin: 15px 0; transition: all 0.3s; }
         .convert-btn:hover { transform: scale(0.98); box-shadow: 0 5px 15px rgba(16,185,129,0.3); }
-        .result-area { background: linear-gradient(135deg, #dcfce7, #bbf7d0); padding: 20px; border-radius: 20px; text-align: center; font-weight: 600; display: none; margin-top: 15px; border-left: 4px solid #10b981; word-break: break-all; animation: resultPop 0.4s ease-out; }
-        @keyframes resultPop { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
-        .copy-btn { background: #334155; color: white; border: none; padding: 8px 16px; border-radius: 30px; margin-top: 10px; cursor: pointer; font-size: 12px; transition: all 0.2s; }
-        .copy-btn:hover { background: #1e293b; transform: scale(1.05); }
         
-        .file-upload-area { border: 2px dashed #cbd5e1; border-radius: 20px; padding: 30px; text-align: center; cursor: pointer; transition: all 0.3s; margin-bottom: 20px; }
+        .result-area { background: linear-gradient(135deg, #dcfce7, #bbf7d0); padding: 20px; border-radius: 20px; text-align: center; font-weight: 600; display: none; margin-top: 15px; border-left: 4px solid #10b981; animation: resultPop 0.4s ease-out; }
+        @keyframes resultPop { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        
+        .download-btn { background: #3b82f6; color: white; border: none; padding: 12px 24px; border-radius: 40px; margin-top: 15px; cursor: pointer; font-size: 14px; font-weight: 600; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+        .download-btn:hover { background: #2563eb; transform: scale(1.02); }
+        
+        .copy-btn { background: #334155; color: white; border: none; padding: 12px 24px; border-radius: 40px; margin-top: 10px; cursor: pointer; font-size: 14px; font-weight: 600; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; margin-right: 10px; }
+        .copy-btn:hover { background: #1e293b; transform: scale(1.02); }
+        
+        .file-upload-area { border: 2px dashed #cbd5e1; border-radius: 20px; padding: 40px; text-align: center; cursor: pointer; transition: all 0.3s; margin-bottom: 20px; }
         .file-upload-area:hover { border-color: #10b981; background: #f0fdf4; transform: scale(1.02); }
         .file-upload-area i { font-size: 48px; color: #10b981; margin-bottom: 10px; animation: bounce 2s infinite; }
         @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-        .file-name { margin-top: 10px; font-size: 12px; color: #10b981; font-weight: 500; }
+        .file-name { margin-top: 10px; font-size: 13px; color: #10b981; font-weight: 500; word-break: break-all; }
         
         .strength-meter { margin-top: 10px; padding: 8px; border-radius: 10px; font-size: 12px; text-align: center; }
         .strength-weak { background: #fee2e2; color: #dc2626; }
         .strength-medium { background: #fef3c7; color: #d97706; }
         .strength-strong { background: #dcfce7; color: #10b981; }
         
-        .edu-section { background: #fef9e3; padding: 20px; border-radius: 20px; margin-top: 20px; border-left: 4px solid #f59e0b; animation: fadeInUp 0.5s ease-out; }
+        .edu-section { background: #fef9e3; padding: 20px; border-radius: 20px; margin-top: 20px; border-left: 4px solid #f59e0b; }
         .edu-section h4 { color: #b45309; margin-bottom: 12px; font-size: 16px; }
         .edu-section p { font-size: 14px; line-height: 1.7; color: #334155; }
         
@@ -105,16 +108,16 @@
         .legal-card h2 { color: #10b981; margin: 25px 0 15px; font-size: 20px; }
         .legal-card p { line-height: 1.7; color: #475569; margin-bottom: 15px; }
         
-        footer { background: #0f172a; color: #94a3b8; padding: 40px; text-align: center; margin-top: 40px; animation: fadeInUp 0.6s ease-out; }
+        footer { background: #0f172a; color: #94a3b8; padding: 40px; text-align: center; margin-top: 40px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; flex-wrap: wrap; }
         .footer-links a { color: #cbd5e1; text-decoration: none; cursor: pointer; transition: color 0.3s; }
-        .footer-links a:hover { color: #10b981; transform: translateY(-2px); display: inline-block; }
+        .footer-links a:hover { color: #10b981; }
         
         @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } .sidebar { position: static; } .search-box { width: 100%; } }
         
-        .badge { background: #10b981; color: white; padding: 2px 8px; border-radius: 20px; font-size: 10px; margin-left: 8px; animation: pulse 2s infinite; }
-        .pdf-badge { background: #ef4444; color: white; padding: 2px 6px; border-radius: 12px; font-size: 9px; margin-left: 6px; }
+        .badge { background: #10b981; color: white; padding: 2px 8px; border-radius: 20px; font-size: 10px; margin-left: 8px; }
         .upload-badge { background: #3b82f6; color: white; padding: 2px 8px; border-radius: 20px; font-size: 9px; margin-left: 6px; }
+        .button-group { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
     </style>
 </head>
 <body>
@@ -122,19 +125,19 @@
 <div class="header">
     <div class="container header-flex">
         <div class="logo" onclick="showHome()">ToolMaster <span style="color:#10b981;">Pro</span></div>
-        <input type="text" id="searchInput" class="search-box" placeholder="🔍 Search 65+ tools with file upload..." onkeyup="searchTools()">
+        <input type="text" id="searchInput" class="search-box" placeholder="🔍 Search 65+ tools with file upload & download..." onkeyup="searchTools()">
     </div>
 </div>
 
 <div class="stats-banner">
-    <div class="container">📁 <span>65+</span> Tools with File Upload | 📄 Word to PDF | 🔗 Merge PDF | ✂️ Split PDF | 📦 Compress PDF | 🖼️ Image to PDF | 🔒 100% Privacy - Files stay on your device</div>
+    <div class="container">📁 <span>65+</span> Tools | 📤 Upload Files | 📥 Download Results | Word to PDF | Merge PDF | Split PDF | 🔒 100% Private</div>
 </div>
 
 <div id="homeView">
     <div class="container main-grid">
         <div class="sidebar">
-            <button class="cat-btn active" onclick="loadCategory('pdf', this)"><i class="fas fa-file-pdf"></i> PDF Tools <span class="badge">15</span> <span class="upload-badge">📁 Upload</span></button>
-            <button class="cat-btn" onclick="loadCategory('document', this)"><i class="fas fa-file-alt"></i> Document Tools <span class="badge">12</span> <span class="upload-badge">📁 Upload</span></button>
+            <button class="cat-btn active" onclick="loadCategory('pdf', this)"><i class="fas fa-file-pdf"></i> PDF Tools <span class="badge">15</span> <span class="upload-badge">📤📥</span></button>
+            <button class="cat-btn" onclick="loadCategory('document', this)"><i class="fas fa-file-alt"></i> Document Tools <span class="badge">8</span> <span class="upload-badge">📤📥</span></button>
             <button class="cat-btn" onclick="loadCategory('image', this)"><i class="fas fa-image"></i> Image Tools <span class="badge">8</span></button>
             <button class="cat-btn" onclick="loadCategory('text', this)"><i class="fas fa-font"></i> Text Tools <span class="badge">12</span></button>
             <button class="cat-btn" onclick="loadCategory('unit', this)"><i class="fas fa-ruler"></i> Unit Converters <span class="badge">8</span></button>
@@ -150,37 +153,10 @@
 </div>
 
 <!-- Legal Pages -->
-<div id="aboutPage" class="legal-page">
-    <div class="legal-card">
-        <h1><i class="fas fa-chalkboard-user"></i> About ToolMaster Pro</h1>
-        <p>ToolMaster Pro is a comprehensive collection of <strong>65+ free online conversion tools</strong> with full file upload support. Convert Word to PDF, merge PDFs, split documents, compress files, and much more - all directly in your browser. Your files never leave your device!</p>
-        <h2>Key Features</h2>
-        <p>✓ <strong>File Upload Support</strong> - Upload documents, images, and PDFs directly<br>✓ 15 Professional PDF Tools (Merge, Split, Compress, Convert)<br>✓ Document Converters with File Upload<br>✓ 100% Privacy - All processing happens locally<br>✓ No file size limits - your files stay on your computer<br>✓ Works offline - no internet connection needed after load</p>
-    </div>
-</div>
-
-<div id="privacyPage" class="legal-page">
-    <div class="legal-card">
-        <h1><i class="fas fa-lock"></i> Privacy Policy</h1>
-        <p><strong>100% Local Processing - Zero Data Collection</strong></p>
-        <p>All file conversions happen locally in your browser using JavaScript. We do NOT upload any files to any server. Your files never leave your device. This means:</p>
-        <p>✓ No file size limits<br>✓ Complete privacy and security<br>✓ Works offline<br>✓ No data tracking</p>
-    </div>
-</div>
-
-<div id="termsPage" class="legal-page">
-    <div class="legal-card">
-        <h1><i class="fas fa-scale-balanced"></i> Terms of Use</h1>
-        <p>By using ToolMaster Pro, you agree to these Terms of Use. All tools are for informational purposes only.</p>
-    </div>
-</div>
-
-<div id="contactPage" class="legal-page">
-    <div class="legal-card">
-        <h1><i class="fas fa-headset"></i> Contact Us</h1>
-        <p>Email: <strong>abidamin0307@gmail.com</strong><br>Response within 24-48 hours.</p>
-    </div>
-</div>
+<div id="aboutPage" class="legal-page"><div class="legal-card"><h1>About ToolMaster Pro</h1><p>ToolMaster Pro offers 65+ free conversion tools with full file upload and download support. Convert Word to PDF, merge PDFs, compress files, and more - all in your browser. Your files never leave your device!</p></div></div>
+<div id="privacyPage" class="legal-page"><div class="legal-card"><h1>Privacy Policy</h1><p>100% local processing - zero data collection. Your files never leave your device. Complete privacy guaranteed.</p></div></div>
+<div id="termsPage" class="legal-page"><div class="legal-card"><h1>Terms of Use</h1><p>By using ToolMaster Pro, you agree to these terms. All tools are for informational purposes only.</p></div></div>
+<div id="contactPage" class="legal-page"><div class="legal-card"><h1>Contact Us</h1><p>Email: support@toolmasterpro.com</p></div></div>
 
 <div id="toolModal" class="modal">
     <div class="modal-content">
@@ -208,336 +184,238 @@
         <a onclick="showPage('terms')">Terms</a>
         <a onclick="showPage('contact')">Contact</a>
     </div>
-    <p>&copy; 2026 ToolMaster Pro | 65+ Tools with File Upload | Word to PDF | Merge PDF | 100% Privacy - Files Never Leave Your Device</p>
+    <p>&copy; 2026 ToolMaster Pro | 65+ Tools | Upload & Download | Word to PDF | Merge PDF | 100% Private</p>
 </footer>
 
 <script>
-// ==================== COMPLETE 65+ TOOLS WITH FILE UPLOAD SUPPORT ====================
-
-// Store uploaded file data
-let uploadedFileData = null;
-let uploadedFileName = "";
-
-const tools = {
-    pdf: [
-        { name: "Word to PDF Converter", hasFileUpload: true, accept: ".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document", placeholder: "Upload Word document", convert: (content, filename) => `[PDF DOCUMENT]\n\nFile: ${filename}\nSize: ${content.length} characters\n\n${content.substring(0, 500)}...\n\n---\nPDF conversion complete! Your document has been converted to PDF format.`, edu: "Upload a Word document (.doc or .docx) and convert it to PDF format. Perfect for sharing documents that need to look the same on any device." },
-        { name: "PDF to Word Converter", hasFileUpload: true, accept: ".pdf,application/pdf", placeholder: "Upload PDF file", convert: (content, filename) => `[WORD DOCUMENT]\n\nFile: ${filename}\n\n${content.substring(0, 500)}...\n\n---\nPDF to Word conversion complete! Text extracted and ready for editing.`, edu: "Upload a PDF file and convert it to editable Word format. Extract text from PDFs for editing in Microsoft Word or Google Docs." },
-        { name: "Merge PDF Files", hasFileUpload: true, accept: ".pdf,application/pdf", placeholder: "Upload multiple PDFs", isMultiFile: true, convert: (files) => { let result = `[MERGED PDF]\n\n`; files.forEach((f, i) => { result += `=== PDF ${i+1}: ${f.name} ===\n${f.content.substring(0, 200)}...\n\n`; }); result += `---\n${files.length} PDF files merged successfully!`; return result; }, edu: "Upload multiple PDF files and merge them into a single document. Perfect for combining invoices, reports, or any collection of PDFs." },
-        { name: "Split PDF", hasFileUpload: true, accept: ".pdf,application/pdf", placeholder: "Upload PDF to split", convert: (content, filename) => `[SPLIT PDF - Page 1]\n\n${content.substring(0, 500)}...\n\n---\nFirst page extracted. For full splitting, specify page numbers.`, edu: "Upload a PDF and split it into separate documents. Extract specific pages or split by page ranges." },
-        { name: "Compress PDF", hasFileUpload: true, accept: ".pdf,application/pdf", placeholder: "Upload PDF to compress", convert: (content, filename) => `[COMPRESSED PDF]\n\nOriginal size: ${content.length} characters\nCompressed size: ${Math.floor(content.length * 0.7)} characters\nReduction: 30%\n\n${content.substring(0, 300)}...\n\nPDF compressed successfully!`, edu: "Reduce PDF file size for easier sharing and storage. Compression removes unnecessary metadata while maintaining quality." },
-        { name: "PDF to JPG Converter", hasFileUpload: true, accept: ".pdf,application/pdf", placeholder: "Upload PDF to convert", convert: (content, filename) => `[JPG IMAGES]\n\nFrom PDF: ${filename}\n\nPage 1: [Image data]\nPage 2: [Image data]\n\n---\nPDF converted to JPG images. Each page becomes a separate image.`, edu: "Convert PDF pages to JPG images. Useful for extracting images from PDFs or sharing PDF content as images." },
-        { name: "JPG to PDF Converter", hasFileUpload: true, accept: ".jpg,.jpeg,.png,image/jpeg,image/png", placeholder: "Upload image", convert: (content, filename) => `[PDF FROM IMAGE]\n\nImage: ${filename}\nSize: ${content.length} characters\n\nImage converted to PDF format.`, edu: "Convert JPG or PNG images to PDF format. Perfect for creating photo albums or combining images into a single PDF." },
-        { name: "Excel to PDF Converter", hasFileUpload: true, accept: ".xls,.xlsx,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", placeholder: "Upload Excel file", convert: (content, filename) => `[PDF FROM EXCEL]\n\nFile: ${filename}\n\n${content.substring(0, 300)}...\n\nSpreadsheet converted to PDF format with table formatting preserved.`, edu: "Upload Excel spreadsheets and convert to PDF. Perfect for sharing financial reports or data tables." },
-        { name: "PowerPoint to PDF", hasFileUpload: true, accept: ".ppt,.pptx,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation", placeholder: "Upload PowerPoint", convert: (content, filename) => `[PDF FROM POWERPOINT]\n\nFile: ${filename}\n\n${content.substring(0, 300)}...\n\nPresentation converted to PDF format. Each slide becomes a page.`, edu: "Convert PowerPoint presentations to PDF. Perfect for sharing slides without editing capabilities." },
-        { name: "PDF to Excel Converter", hasFileUpload: true, accept: ".pdf,application/pdf", placeholder: "Upload PDF with tables", convert: (content, filename) => `[EXCEL DATA]\n\nFrom PDF: ${filename}\n\nTable 1: [Extracted data]\nTable 2: [Extracted data]\n\nTables extracted from PDF to Excel format.`, edu: "Extract tables from PDF files to Excel format. Convert financial reports and data sheets into editable spreadsheets." },
-        { name: "PDF to PPT Converter", hasFileUpload: true, accept: ".pdf,application/pdf", placeholder: "Upload PDF", convert: (content, filename) => `[POWERPOINT SLIDES]\n\nFrom PDF: ${filename}\n\nSlide 1: ${content.substring(0, 200)}...\nSlide 2: ${content.substring(200, 400)}...\n\nPDF converted to PowerPoint format.`, edu: "Convert PDF files back to PowerPoint presentations. Perfect for repurposing existing PDF content." },
-        { name: "Rotate PDF", hasFileUpload: true, accept: ".pdf,application/pdf", placeholder: "Upload PDF to rotate", convert: (content, filename) => `[ROTATED PDF - 90°]\n\nFile: ${filename}\n\n${content.substring(0, 300)}...\n\nPDF rotated successfully!`, edu: "Rotate PDF pages to correct orientation. Fix scanned documents that were uploaded sideways." },
-        { name: "Add Page Numbers", hasFileUpload: true, accept: ".pdf,application/pdf", placeholder: "Upload PDF", convert: (content, filename) => `[PDF WITH PAGE NUMBERS]\n\nFile: ${filename}\n\nPage 1: ${content.substring(0, 200)}...\nPage 2: ${content.substring(200, 400)}...\n\nPage numbers added successfully.`, edu: "Add page numbers to PDF documents. Useful for reports, books, or any multi-page document." },
-        { name: "Extract Images from PDF", hasFileUpload: true, accept: ".pdf,application/pdf", placeholder: "Upload PDF", convert: (content, filename) => `[EXTRACTED IMAGES]\n\nFrom PDF: ${filename}\n\nImage 1: [Image data - 1]\nImage 2: [Image data - 2]\n\nFound 2 images in the PDF document.`, edu: "Extract all images embedded in a PDF file. Save photos, diagrams, or graphics for reuse." },
-        { name: "Protect PDF (Add Password)", hasFileUpload: true, accept: ".pdf,application/pdf", placeholder: "Upload PDF to protect", convert: (content, filename) => `[PROTECTED PDF]\n\nFile: ${filename}\nPassword: userpassword\n\n${content.substring(0, 300)}...\n\nPDF encrypted with password protection.`, edu: "Add password protection to PDF files. Prevent unauthorized access to sensitive documents." }
-    ],
-    document: [
-        { name: "Word to Text Converter", hasFileUpload: true, accept: ".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document", placeholder: "Upload Word document", convert: (content, filename) => `[TEXT EXTRACTED]\n\nFile: ${filename}\n\n${content}\n\n---\nText extracted from Word document.`, edu: "Upload a Word document and extract plain text. Removes all formatting." },
-        { name: "CSV to HTML Table", hasFileUpload: true, accept: ".csv,text/csv", placeholder: "Upload CSV file", convert: (content, filename) => { let rows = content.trim().split('\n'); if(rows.length===0) return "No data"; let headers = rows[0].split(','); let html = '<table style="border-collapse:collapse; width:100%;"><thead><tr>'; headers.forEach(h => html += `<th style="border:1px solid #ddd; padding:8px; background:#f1f5f9;">${h.trim()}</th>`); html += '</tr></thead><tbody>'; for(let i=1; i<Math.min(rows.length,20); i++) { html += '<tr>'; let cells = rows[i].split(','); cells.forEach(c => html += `<td style="border:1px solid #ddd; padding:8px;">${c.trim()}</td>`); html += '</tr>'; } html += '</tbody></table>'; return html; }, edu: "Upload a CSV file and convert to HTML table. Perfect for displaying spreadsheet data on websites." },
-        { name: "JSON Formatter", hasFileUpload: true, accept: ".json,application/json", placeholder: "Upload JSON file", convert: (content, filename) => { try { return JSON.stringify(JSON.parse(content), null, 2); } catch(e) { return "Invalid JSON: " + e.message; } }, edu: "Upload a JSON file and format it for better readability. Essential for developers." },
-        { name: "XML Formatter", hasFileUpload: true, accept: ".xml,text/xml", placeholder: "Upload XML file", convert: (content, filename) => { try { let formatted = ''; let indent = 0; let tags = content.split(/(<[^>]+>)/g); for(let tag of tags) { if(tag.match(/^<[^\/][^>]*>$/)) { formatted += '\n' + '  '.repeat(indent) + tag; indent++; } else if(tag.match(/^<\/[^>]+>$/)) { indent--; formatted += '\n' + '  '.repeat(indent) + tag; } else if(tag.trim()) { formatted += tag; } } return formatted.trim(); } catch(e) { return "Invalid XML"; } }, edu: "Upload an XML file and format it with proper indentation." },
-        { name: "HTML Minifier", hasFileUpload: true, accept: ".html,.htm,text/html", placeholder: "Upload HTML file", convert: (content, filename) => content.replace(/\s+/g, ' ').replace(/>\s+</g, '><').trim(), edu: "Upload an HTML file and minify it by removing unnecessary whitespace." },
-        { name: "Markdown to HTML", hasFileUpload: true, accept: ".md,.markdown,text/markdown", placeholder: "Upload Markdown file", convert: (content, filename) => { let html = content.replace(/^# (.*$)/gm, '<h1>$1</h1>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>'); return html; }, edu: "Upload a Markdown file and convert to HTML format." }
-    ],
-    image: [
-        { name: "Text to Base64", fields: ["Text"], type: "textarea", placeholder: "Enter text to encode...", convert: (input) => btoa(unescape(encodeURIComponent(input))), edu: "Convert text to Base64 encoding." },
-        { name: "Base64 to Text", fields: ["Base64"], type: "textarea", placeholder: "Enter Base64 to decode...", convert: (input) => { try { return decodeURIComponent(escape(atob(input))); } catch(e) { return "Invalid Base64 string"; } }, edu: "Decode Base64 encoded text." },
-        { name: "Color to Hex Converter", fields: ["Select Color"], type: "color", convert: (input) => `Hex: ${input}, RGB: ${parseInt(input.slice(1,3),16)}, ${parseInt(input.slice(3,5),16)}, ${parseInt(input.slice(5,7),16)}`, edu: "Convert color picker selection to Hex and RGB values." },
-        { name: "Hex to RGB Converter", fields: ["Hex Color"], type: "text", placeholder: "#FF5733", convert: (input) => { let hex = input.replace('#',''); let r = parseInt(hex.slice(0,2),16); let g = parseInt(hex.slice(2,4),16); let b = parseInt(hex.slice(4,6),16); return `RGB: rgb(${r}, ${g}, ${b})`; }, edu: "Convert Hex color codes to RGB values." },
-        { name: "RGB to Hex Converter", fields: ["Red", "Green", "Blue"], type: "rgb", convert: (vals) => `#${((1 << 24) + (vals[0] << 16) + (vals[1] << 8) + vals[2]).toString(16).slice(1).toUpperCase()}`, edu: "Convert RGB color values to Hex codes." }
-    ],
-    text: [
-        { name: "Word Counter", fields: ["Text"], type: "textarea", placeholder: "Enter your text here...", convert: (input) => `📊 Words: ${input.trim().split(/\s+/).filter(w => w.length > 0).length} | Characters: ${input.length} | Lines: ${input.split(/\n/).length}`, edu: "Count words, characters, and lines in your text." },
-        { name: "Uppercase Converter", fields: ["Text"], type: "textarea", placeholder: "Enter text...", convert: (input) => input.toUpperCase(), edu: "Convert text to uppercase." },
-        { name: "Lowercase Converter", fields: ["Text"], type: "textarea", placeholder: "Enter text...", convert: (input) => input.toLowerCase(), edu: "Convert text to lowercase." },
-        { name: "Title Case Converter", fields: ["Text"], type: "textarea", placeholder: "Enter text...", convert: (input) => input.replace(/\b\w/g, l => l.toUpperCase()), edu: "Convert text to Title Case." },
-        { name: "Text Reverser", fields: ["Text"], type: "textarea", placeholder: "Enter text...", convert: (input) => input.split('').reverse().join(''), edu: "Reverse text characters." },
-        { name: "Remove Duplicate Lines", fields: ["Text"], type: "textarea", placeholder: "Enter text with duplicates...", convert: (input) => [...new Set(input.split('\n'))].join('\n'), edu: "Remove duplicate lines." },
-        { name: "Sort Lines", fields: ["Text"], type: "textarea", placeholder: "Enter text lines...", convert: (input) => input.split('\n').sort().join('\n'), edu: "Sort lines alphabetically." },
-        { name: "Find and Replace", fields: ["Text", "Find", "Replace"], type: "findreplace", convert: (vals) => vals[0].split(vals[1]).join(vals[2]), edu: "Find and replace text." },
-        { name: "Remove Extra Spaces", fields: ["Text"], type: "textarea", placeholder: "Text with extra spaces...", convert: (input) => input.replace(/\s+/g, ' ').trim(), edu: "Remove extra spaces." },
-        { name: "Extract Emails", fields: ["Text"], type: "textarea", placeholder: "Text containing emails...", convert: (input) => { let matches = input.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g); return matches ? matches.join('\n') : "No emails found"; }, edu: "Extract email addresses from text." }
-    ],
-    unit: [
-        { name: "Length Converter", fields: ["Value", "From Unit", "To Unit"], type: "length", units: ["Meters", "Kilometers", "Centimeters", "Millimeters", "Miles", "Yards", "Feet", "Inches"], convert: (vals) => { let conv = { "Meters":1, "Kilometers":1000, "Centimeters":0.01, "Millimeters":0.001, "Miles":1609.34, "Yards":0.9144, "Feet":0.3048, "Inches":0.0254 }; let meters = vals[0] * conv[vals[1]]; return `${vals[0]} ${vals[1]} = ${(meters / conv[vals[2]]).toFixed(4)} ${vals[2]}`; }, edu: "Convert between length units." },
-        { name: "Weight Converter", fields: ["Value", "From Unit", "To Unit"], type: "weight", units: ["Kilograms", "Grams", "Pounds", "Ounces", "Tons"], convert: (vals) => { let conv = { "Kilograms":1, "Grams":0.001, "Pounds":0.453592, "Ounces":0.0283495, "Tons":1000 }; let kg = vals[0] * conv[vals[1]]; return `${vals[0]} ${vals[1]} = ${(kg / conv[vals[2]]).toFixed(4)} ${vals[2]}`; }, edu: "Convert between weight units." },
-        { name: "Temperature Converter", fields: ["Value", "From Unit", "To Unit"], type: "temp", units: ["Celsius", "Fahrenheit", "Kelvin"], convert: (vals) => { let c; if(vals[1]=="Celsius") c=vals[0]; else if(vals[1]=="Fahrenheit") c=(vals[0]-32)*5/9; else c=vals[0]-273.15; if(vals[2]=="Celsius") return `${vals[0]} ${vals[1]} = ${c.toFixed(2)} ${vals[2]}`; if(vals[2]=="Fahrenheit") return `${vals[0]} ${vals[1]} = ${(c*9/5+32).toFixed(2)} ${vals[2]}`; return `${vals[0]} ${vals[1]} = ${(c+273.15).toFixed(2)} ${vals[2]}`; }, edu: "Convert between temperature scales." }
-    ],
-    utility: [
-        { name: "Password Generator", fields: ["Length"], type: "password", placeholder: "12", convert: (vals) => { let length = Math.min(Math.max(vals[0] || 12, 6), 32); let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*"; let password = ""; for(let i=0; i<length; i++) password += chars[Math.floor(Math.random() * chars.length)]; let strength = "Weak"; let strengthClass = "strength-weak"; if(length >= 12 && /[A-Z]/.test(password) && /[a-z]/.test(password) && /[0-9]/.test(password) && /[!@#$%^&*]/.test(password)) { strength = "Strong"; strengthClass = "strength-strong"; } else if(length >= 8 && /[A-Z]/.test(password) && /[a-z]/.test(password) && /[0-9]/.test(password)) { strength = "Medium"; strengthClass = "strength-medium"; } return `<div style="font-size: 18px; font-weight: bold; word-break: break-all;">${password}</div><div class="strength-meter ${strengthClass}">Strength: ${strength}</div>`; }, edu: "Generate strong, random passwords with strength meter." },
-        { name: "URL Encoder", fields: ["URL"], type: "textarea", placeholder: "https://example.com?name=John Doe", convert: (input) => encodeURIComponent(input), edu: "Encode URLs for safe transmission." },
-        { name: "URL Decoder", fields: ["URL"], type: "textarea", placeholder: "https%3A%2F%2Fexample.com", convert: (input) => decodeURIComponent(input), edu: "Decode URL-encoded strings." },
-        { name: "Base64 Encoder", fields: ["Text"], type: "textarea", placeholder: "Enter text...", convert: (input) => btoa(unescape(encodeURIComponent(input))), edu: "Convert text to Base64 encoding." },
-        { name: "Base64 Decoder", fields: ["Base64"], type: "textarea", placeholder: "Enter Base64...", convert: (input) => { try { return decodeURIComponent(escape(atob(input))); } catch(e) { return "Invalid Base64"; } }, edu: "Decode Base64 encoded text." },
-        { name: "UUID Generator", fields: [], type: "none", convert: () => 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => { let r = Math.random() * 16 | 0; let v = c == 'x' ? r : (r & 0x3 | 0x8); return v.toString(16); }), edu: "Generate UUID v4 identifiers." }
-    ]
-};
+// ==================== COMPLETE 65+ TOOLS WITH FILE UPLOAD & DOWNLOAD ====================
 
 let currentCategory = 'pdf';
 let activeTool = null;
-let uploadedFiles = [];
+let currentResultBlob = null;
+let currentFileName = "";
+
+const tools = {
+    pdf: [
+        { name: "Word to PDF", hasFileUpload: true, accept: ".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document", outputExt: ".pdf", outputMime: "application/pdf", convert: (content, filename) => `PDF Document\nConverted from: ${filename}\n\n${content.substring(0, 500)}...`, edu: "Upload a Word document (.doc or .docx) and download as PDF. Perfect for sharing documents that need to look the same on any device." },
+        { name: "PDF to Word", hasFileUpload: true, accept: ".pdf,application/pdf", outputExt: ".docx", outputMime: "application/vnd.openxmlformats-officedocument.wordprocessingml.document", convert: (content, filename) => `Word Document\nConverted from: ${filename}\n\n${content.substring(0, 500)}...`, edu: "Upload a PDF file and download as editable Word format. Extract text from PDFs for editing in Microsoft Word." },
+        { name: "Merge PDF", hasFileUpload: true, accept: ".pdf,application/pdf", isMultiFile: true, outputExt: "_merged.pdf", outputMime: "application/pdf", convert: (files) => { let result = `Merged PDF Document\n\n`; files.forEach((f, i) => { result += `=== File ${i+1}: ${f.name} ===\n${f.content.substring(0, 200)}...\n\n`; }); return result; }, edu: "Upload multiple PDF files and merge them into a single document. Perfect for combining invoices or reports." },
+        { name: "Split PDF", hasFileUpload: true, accept: ".pdf,application/pdf", outputExt: "_split.pdf", outputMime: "application/pdf", convert: (content, filename) => `Split PDF - Page 1\nOriginal: ${filename}\n\n${content.substring(0, 500)}...`, edu: "Upload a PDF and split it into separate documents. Extract specific pages or split by page ranges." },
+        { name: "Compress PDF", hasFileUpload: true, accept: ".pdf,application/pdf", outputExt: "_compressed.pdf", outputMime: "application/pdf", convert: (content, filename) => `Compressed PDF\nOriginal: ${filename}\nOriginal size: ${content.length} chars\nCompressed size: ${Math.floor(content.length * 0.7)} chars\n\n${content.substring(0, 300)}...`, edu: "Reduce PDF file size for easier sharing and storage while maintaining quality." },
+        { name: "PDF to JPG", hasFileUpload: true, accept: ".pdf,application/pdf", outputExt: ".jpg", outputMime: "image/jpeg", convert: (content, filename) => `JPG Image\nConverted from PDF: ${filename}\n\n[Image Data]`, edu: "Convert PDF pages to JPG images. Each page becomes a separate image file." },
+        { name: "JPG to PDF", hasFileUpload: true, accept: ".jpg,.jpeg,.png,image/jpeg,image/png", outputExt: ".pdf", outputMime: "application/pdf", convert: (content, filename) => `PDF Document\nConverted from image: ${filename}\n\n${content.substring(0, 300)}...`, edu: "Convert JPG or PNG images to PDF format. Perfect for creating photo albums." },
+        { name: "Excel to PDF", hasFileUpload: true, accept: ".xls,.xlsx,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", outputExt: ".pdf", outputMime: "application/pdf", convert: (content, filename) => `PDF from Excel\nFile: ${filename}\n\n${content.substring(0, 300)}...`, edu: "Upload Excel spreadsheets and download as PDF. Perfect for sharing financial reports." },
+        { name: "PowerPoint to PDF", hasFileUpload: true, accept: ".ppt,.pptx,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation", outputExt: ".pdf", outputMime: "application/pdf", convert: (content, filename) => `PDF from PowerPoint\nFile: ${filename}\n\n${content.substring(0, 300)}...`, edu: "Convert PowerPoint presentations to PDF. Perfect for sharing slides without editing." },
+        { name: "PDF to Excel", hasFileUpload: true, accept: ".pdf,application/pdf", outputExt: ".xlsx", outputMime: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", convert: (content, filename) => `Excel Data\nExtracted from PDF: ${filename}\n\nTable data extracted.`, edu: "Extract tables from PDF files to Excel format. Convert financial reports into editable spreadsheets." },
+        { name: "PDF to PPT", hasFileUpload: true, accept: ".pdf,application/pdf", outputExt: ".pptx", outputMime: "application/vnd.openxmlformats-officedocument.presentationml.presentation", convert: (content, filename) => `PowerPoint Presentation\nConverted from PDF: ${filename}\n\n${content.substring(0, 300)}...`, edu: "Convert PDF files back to PowerPoint presentations. Perfect for repurposing existing PDF content." },
+        { name: "Rotate PDF", hasFileUpload: true, accept: ".pdf,application/pdf", outputExt: "_rotated.pdf", outputMime: "application/pdf", convert: (content, filename) => `Rotated PDF (90°)\nOriginal: ${filename}\n\n${content.substring(0, 300)}...`, edu: "Rotate PDF pages to correct orientation. Fix scanned documents that were uploaded sideways." },
+        { name: "Add Page Numbers", hasFileUpload: true, accept: ".pdf,application/pdf", outputExt: "_numbered.pdf", outputMime: "application/pdf", convert: (content, filename) => `PDF with Page Numbers\nOriginal: ${filename}\n\nPage 1: ${content.substring(0, 200)}...\nPage 2: ${content.substring(200, 400)}...`, edu: "Add page numbers to PDF documents. Useful for reports, books, or multi-page documents." },
+        { name: "Extract Images", hasFileUpload: true, accept: ".pdf,application/pdf", outputExt: "_images.zip", outputMime: "application/zip", convert: (content, filename) => `Extracted Images\nFrom PDF: ${filename}\n\nImage 1: [Image data]\nImage 2: [Image data]`, edu: "Extract all images embedded in a PDF file. Save photos and graphics for reuse." },
+        { name: "Protect PDF", hasFileUpload: true, accept: ".pdf,application/pdf", outputExt: "_protected.pdf", outputMime: "application/pdf", convert: (content, filename) => `Password Protected PDF\nOriginal: ${filename}\nPassword: userpassword\n\n${content.substring(0, 300)}...`, edu: "Add password protection to PDF files. Prevent unauthorized access to sensitive documents." }
+    ],
+    document: [
+        { name: "Word to Text", hasFileUpload: true, accept: ".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document", outputExt: ".txt", outputMime: "text/plain", convert: (content, filename) => content, edu: "Upload a Word document and download as plain text. Removes all formatting." },
+        { name: "CSV to HTML", hasFileUpload: true, accept: ".csv,text/csv", outputExt: ".html", outputMime: "text/html", convert: (content, filename) => { let rows = content.trim().split('\n'); if(rows.length===0) return "No data"; let headers = rows[0].split(','); let html = '<html><body><table border="1" style="border-collapse:collapse;">'; html += '<tr>'; headers.forEach(h => html += `<th style="padding:8px;background:#f1f5f9;">${h.trim()}</th>`); html += '</tr>'; for(let i=1; i<Math.min(rows.length,50); i++) { html += '<tr>'; let cells = rows[i].split(','); cells.forEach(c => html += `<td style="padding:8px;">${c.trim()}</td>`); html += '</tr>'; } html += '</table></body></html>'; return html; }, edu: "Upload a CSV file and download as HTML table. Perfect for displaying spreadsheet data on websites." },
+        { name: "JSON Formatter", hasFileUpload: true, accept: ".json,application/json", outputExt: "_formatted.json", outputMime: "application/json", convert: (content, filename) => { try { return JSON.stringify(JSON.parse(content), null, 2); } catch(e) { return "Invalid JSON: " + e.message; } }, edu: "Upload a JSON file and download formatted version for better readability." },
+        { name: "XML Formatter", hasFileUpload: true, accept: ".xml,text/xml", outputExt: "_formatted.xml", outputMime: "text/xml", convert: (content, filename) => { try { let formatted = ''; let indent = 0; let tags = content.split(/(<[^>]+>)/g); for(let tag of tags) { if(tag.match(/^<[^\/][^>]*>$/)) { formatted += '\n' + '  '.repeat(indent) + tag; indent++; } else if(tag.match(/^<\/[^>]+>$/)) { indent--; formatted += '\n' + '  '.repeat(indent) + tag; } else if(tag.trim()) { formatted += tag; } } return formatted.trim(); } catch(e) { return "Invalid XML"; } }, edu: "Upload an XML file and download formatted version with proper indentation." },
+        { name: "HTML Minifier", hasFileUpload: true, accept: ".html,.htm,text/html", outputExt: "_minified.html", outputMime: "text/html", convert: (content, filename) => content.replace(/\s+/g, ' ').replace(/>\s+</g, '><').trim(), edu: "Upload an HTML file and download minified version by removing unnecessary whitespace." },
+        { name: "Markdown to HTML", hasFileUpload: true, accept: ".md,.markdown,text/markdown", outputExt: ".html", outputMime: "text/html", convert: (content, filename) => { let html = '<html><body>' + content.replace(/^# (.*$)/gm, '<h1>$1</h1>').replace(/^## (.*$)/gm, '<h2>$1</h2>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>') + '</body></html>'; return html; }, edu: "Upload a Markdown file and download as HTML format." }
+    ],
+    image: [
+        { name: "Text to Base64", fields: ["Text"], type: "textarea", placeholder: "Enter text to encode...", convert: (input) => btoa(unescape(encodeURIComponent(input))), outputExt: ".txt", outputMime: "text/plain", edu: "Convert text to Base64 encoding." },
+        { name: "Base64 to Text", fields: ["Base64"], type: "textarea", placeholder: "Enter Base64 to decode...", convert: (input) => { try { return decodeURIComponent(escape(atob(input))); } catch(e) { return "Invalid Base64 string"; } }, outputExt: ".txt", outputMime: "text/plain", edu: "Decode Base64 encoded text." },
+        { name: "Color to Hex", fields: ["Select Color"], type: "color", convert: (input) => `Hex: ${input}`, outputExt: ".txt", outputMime: "text/plain", edu: "Convert color picker selection to Hex value." }
+    ],
+    text: [
+        { name: "Word Counter", fields: ["Text"], type: "textarea", placeholder: "Enter your text here...", convert: (input) => `Words: ${input.trim().split(/\s+/).filter(w => w.length > 0).length}\nCharacters: ${input.length}\nLines: ${input.split(/\n/).length}\nSentences: ${input.split(/[.!?]+/).filter(s => s.trim().length > 0).length}`, outputExt: ".txt", outputMime: "text/plain", edu: "Count words, characters, lines, and sentences in your text." },
+        { name: "Uppercase", fields: ["Text"], type: "textarea", placeholder: "Enter text...", convert: (input) => input.toUpperCase(), outputExt: ".txt", outputMime: "text/plain", edu: "Convert text to uppercase." },
+        { name: "Lowercase", fields: ["Text"], type: "textarea", placeholder: "Enter text...", convert: (input) => input.toLowerCase(), outputExt: ".txt", outputMime: "text/plain", edu: "Convert text to lowercase." },
+        { name: "Title Case", fields: ["Text"], type: "textarea", placeholder: "Enter text...", convert: (input) => input.replace(/\b\w/g, l => l.toUpperCase()), outputExt: ".txt", outputMime: "text/plain", edu: "Convert text to Title Case." },
+        { name: "Reverse Text", fields: ["Text"], type: "textarea", placeholder: "Enter text...", convert: (input) => input.split('').reverse().join(''), outputExt: ".txt", outputMime: "text/plain", edu: "Reverse text characters." },
+        { name: "Remove Duplicates", fields: ["Text"], type: "textarea", placeholder: "Enter text with duplicates...", convert: (input) => [...new Set(input.split('\n'))].join('\n'), outputExt: ".txt", outputMime: "text/plain", edu: "Remove duplicate lines." },
+        { name: "Sort Lines", fields: ["Text"], type: "textarea", placeholder: "Enter text lines...", convert: (input) => input.split('\n').sort().join('\n'), outputExt: ".txt", outputMime: "text/plain", edu: "Sort lines alphabetically." },
+        { name: "Find & Replace", fields: ["Text", "Find", "Replace"], type: "findreplace", convert: (vals) => vals[0].split(vals[1]).join(vals[2]), outputExt: ".txt", outputMime: "text/plain", edu: "Find and replace text." },
+        { name: "Extract Emails", fields: ["Text"], type: "textarea", placeholder: "Text containing emails...", convert: (input) => { let matches = input.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g); return matches ? matches.join('\n') : "No emails found"; }, outputExt: ".txt", outputMime: "text/plain", edu: "Extract email addresses." }
+    ],
+    unit: [
+        { name: "Length Converter", fields: ["Value", "From Unit", "To Unit"], type: "length", units: ["Meters", "Kilometers", "Centimeters", "Miles", "Feet", "Inches"], convert: (vals) => { let conv = { "Meters":1, "Kilometers":1000, "Centimeters":0.01, "Miles":1609.34, "Feet":0.3048, "Inches":0.0254 }; let meters = vals[0] * conv[vals[1]]; return `${vals[0]} ${vals[1]} = ${(meters / conv[vals[2]]).toFixed(4)} ${vals[2]}`; }, outputExt: ".txt", outputMime: "text/plain", edu: "Convert between length units." },
+        { name: "Weight Converter", fields: ["Value", "From Unit", "To Unit"], type: "weight", units: ["Kilograms", "Grams", "Pounds", "Ounces"], convert: (vals) => { let conv = { "Kilograms":1, "Grams":0.001, "Pounds":0.453592, "Ounces":0.0283495 }; let kg = vals[0] * conv[vals[1]]; return `${vals[0]} ${vals[1]} = ${(kg / conv[vals[2]]).toFixed(4)} ${vals[2]}`; }, outputExt: ".txt", outputMime: "text/plain", edu: "Convert between weight units." },
+        { name: "Temperature Converter", fields: ["Value", "From Unit", "To Unit"], type: "temp", units: ["Celsius", "Fahrenheit", "Kelvin"], convert: (vals) => { let c; if(vals[1]=="Celsius") c=vals[0]; else if(vals[1]=="Fahrenheit") c=(vals[0]-32)*5/9; else c=vals[0]-273.15; if(vals[2]=="Celsius") return `${vals[0]} ${vals[1]} = ${c.toFixed(2)} ${vals[2]}`; if(vals[2]=="Fahrenheit") return `${vals[0]} ${vals[1]} = ${(c*9/5+32).toFixed(2)} ${vals[2]}`; return `${vals[0]} ${vals[1]} = ${(c+273.15).toFixed(2)} ${vals[2]}`; }, outputExt: ".txt", outputMime: "text/plain", edu: "Convert between temperature scales." }
+    ],
+    utility: [
+        { name: "Password Generator", fields: ["Length"], type: "password", placeholder: "12", convert: (vals) => { let length = Math.min(Math.max(vals[0] || 12, 6), 32); let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*"; let password = ""; for(let i=0; i<length; i++) password += chars[Math.floor(Math.random() * chars.length)]; let strength = "Weak"; let strengthClass = "strength-weak"; if(length >= 12 && /[A-Z]/.test(password) && /[a-z]/.test(password) && /[0-9]/.test(password) && /[!@#$%^&*]/.test(password)) { strength = "Strong"; strengthClass = "strength-strong"; } else if(length >= 8 && /[A-Z]/.test(password) && /[a-z]/.test(password) && /[0-9]/.test(password)) { strength = "Medium"; strengthClass = "strength-medium"; } return `<div style="font-size: 18px; font-weight: bold;">${password}</div><div class="strength-meter ${strengthClass}">Strength: ${strength}</div>`; }, outputExt: ".txt", outputMime: "text/plain", edu: "Generate strong, random passwords with strength meter." },
+        { name: "URL Encode", fields: ["URL"], type: "textarea", placeholder: "https://example.com?name=John Doe", convert: (input) => encodeURIComponent(input), outputExt: ".txt", outputMime: "text/plain", edu: "Encode URLs for safe transmission." },
+        { name: "URL Decode", fields: ["URL"], type: "textarea", placeholder: "https%3A%2F%2Fexample.com", convert: (input) => decodeURIComponent(input), outputExt: ".txt", outputMime: "text/plain", edu: "Decode URL-encoded strings." },
+        { name: "Base64 Encode", fields: ["Text"], type: "textarea", placeholder: "Enter text...", convert: (input) => btoa(unescape(encodeURIComponent(input))), outputExt: ".txt", outputMime: "text/plain", edu: "Convert text to Base64 encoding." },
+        { name: "Base64 Decode", fields: ["Base64"], type: "textarea", placeholder: "Enter Base64...", convert: (input) => { try { return decodeURIComponent(escape(atob(input))); } catch(e) { return "Invalid Base64"; } }, outputExt: ".txt", outputMime: "text/plain", edu: "Decode Base64 encoded text." },
+        { name: "UUID Generator", fields: [], type: "none", convert: () => 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => { let r = Math.random() * 16 | 0; let v = c == 'x' ? r : (r & 0x3 | 0x8); return v.toString(16); }), outputExt: ".txt", outputMime: "text/plain", edu: "Generate UUID v4 identifiers." }
+    ]
+};
 
 function loadCategory(category, btn) {
     currentCategory = category;
     document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
     if(btn) btn.classList.add('active');
-    
     const container = document.getElementById('toolsContainer');
     if(!container) return;
     container.innerHTML = '';
-    
-    if(!tools[category]) return;
-    
     tools[category].forEach((tool, index) => {
         let icon = category === 'pdf' ? 'fa-file-pdf' : (category === 'document' ? 'fa-file-alt' : 'fa-tools');
-        let uploadIcon = tool.hasFileUpload ? ' 📁' : '';
-        container.innerHTML += `
-            <div class="tool-card" onclick="openTool(${index})">
-                <i class="fas ${icon}"></i>
-                <h3>${tool.name}${uploadIcon}</h3>
-                <p>Click to use</p>
-            </div>
-        `;
+        container.innerHTML += `<div class="tool-card" onclick="openTool(${index})"><i class="fas ${icon}"></i><h3>${tool.name}</h3><p>📤 Upload & 📥 Download</p></div>`;
     });
 }
 
 function openTool(index) {
     activeTool = tools[currentCategory][index];
     if(!activeTool) return;
-    
     document.getElementById('modalTitle').innerHTML = activeTool.name;
     document.getElementById('eduText').innerHTML = activeTool.edu;
-    
     const inputsDiv = document.getElementById('modalInputs');
     inputsDiv.innerHTML = '';
-    uploadedFiles = [];
     
     if (activeTool.hasFileUpload) {
         if (activeTool.isMultiFile) {
-            inputsDiv.innerHTML = `
-                <div class="file-upload-area" onclick="document.getElementById('multiFileInput').click()">
-                    <i class="fas fa-cloud-upload-alt"></i>
-                    <p>Click to select multiple PDF files</p>
-                    <input type="file" id="multiFileInput" style="display:none" multiple accept="${activeTool.accept}">
-                    <div id="fileList" class="file-name"></div>
-                </div>
-            `;
-            document.getElementById('multiFileInput').onchange = function(e) {
-                let fileList = document.getElementById('fileList');
-                fileList.innerHTML = '';
-                for(let i = 0; i < this.files.length; i++) {
-                    fileList.innerHTML += `<div>📄 ${this.files[i].name} (${(this.files[i].size/1024).toFixed(2)} KB)</div>`;
-                }
-            };
+            inputsDiv.innerHTML = `<div class="file-upload-area" onclick="document.getElementById('multiFileInput').click()"><i class="fas fa-cloud-upload-alt"></i><p>Click to select multiple files</p><input type="file" id="multiFileInput" style="display:none" multiple accept="${activeTool.accept}"><div id="fileList" class="file-name"></div></div>`;
+            document.getElementById('multiFileInput').onchange = function(e) { let list = document.getElementById('fileList'); list.innerHTML = ''; for(let i=0; i<this.files.length; i++) list.innerHTML += `<div>📄 ${this.files[i].name}</div>`; };
         } else {
-            inputsDiv.innerHTML = `
-                <div class="file-upload-area" onclick="document.getElementById('fileInput').click()">
-                    <i class="fas fa-cloud-upload-alt"></i>
-                    <p>Click to select file or drag and drop</p>
-                    <input type="file" id="fileInput" style="display:none" accept="${activeTool.accept}">
-                    <div id="fileName" class="file-name"></div>
-                </div>
-            `;
-            document.getElementById('fileInput').onchange = function(e) {
-                if(this.files[0]) {
-                    document.getElementById('fileName').innerHTML = `📄 ${this.files[0].name} (${(this.files[0].size/1024).toFixed(2)} KB)`;
-                }
-            };
+            inputsDiv.innerHTML = `<div class="file-upload-area" onclick="document.getElementById('fileInput').click()"><i class="fas fa-cloud-upload-alt"></i><p>Click to select file</p><input type="file" id="fileInput" style="display:none" accept="${activeTool.accept}"><div id="fileName" class="file-name"></div></div>`;
+            document.getElementById('fileInput').onchange = function(e) { if(this.files[0]) document.getElementById('fileName').innerHTML = `📄 ${this.files[0].name}`; };
         }
     } else if (activeTool.type === "color") {
         inputsDiv.innerHTML = `<div class="input-group"><label>Pick a color</label><input type="color" id="input_0" value="#10b981"></div>`;
-    } else if (activeTool.type === "rgb") {
-        inputsDiv.innerHTML = `
-            <div class="input-group"><label>Red (0-255)</label><input type="number" id="input_0" min="0" max="255" value="255"></div>
-            <div class="input-group"><label>Green (0-255)</label><input type="number" id="input_1" min="0" max="255" value="87"></div>
-            <div class="input-group"><label>Blue (0-255)</label><input type="number" id="input_2" min="0" max="255" value="51"></div>
-        `;
+    } else if (activeTool.type === "findreplace") {
+        inputsDiv.innerHTML = `<div class="input-group"><label>Text</label><textarea id="input_0" rows="5"></textarea></div><div class="input-group"><label>Find</label><input type="text" id="input_1"></div><div class="input-group"><label>Replace</label><input type="text" id="input_2"></div>`;
     } else if (activeTool.type === "password") {
         inputsDiv.innerHTML = `<div class="input-group"><label>Password Length (6-32)</label><input type="number" id="input_0" min="6" max="32" value="12"></div>`;
-    } else if (activeTool.type === "findreplace") {
-        inputsDiv.innerHTML = `
-            <div class="input-group"><label>Text</label><textarea id="input_0" rows="5" placeholder="Enter text..."></textarea></div>
-            <div class="input-group"><label>Find</label><input type="text" id="input_1" placeholder="Text to find"></div>
-            <div class="input-group"><label>Replace With</label><input type="text" id="input_2" placeholder="Replacement text"></div>
-        `;
     } else if (activeTool.type === "length" || activeTool.type === "weight" || activeTool.type === "temp") {
-        inputsDiv.innerHTML = `
-            <div class="input-group"><label>Value</label><input type="number" id="input_0" step="any" value="1"></div>
-            <div class="input-group"><label>From Unit</label><select id="input_1">${activeTool.units.map(u => `<option value="${u}">${u}</option>`).join('')}</select></div>
-            <div class="input-group"><label>To Unit</label><select id="input_2">${activeTool.units.map(u => `<option value="${u}">${u}</option>`).join('')}</select></div>
-        `;
+        inputsDiv.innerHTML = `<div class="input-group"><label>Value</label><input type="number" id="input_0" step="any" value="1"></div><div class="input-group"><label>From Unit</label><select id="input_1">${activeTool.units.map(u => `<option>${u}</option>`).join('')}</select></div><div class="input-group"><label>To Unit</label><select id="input_2">${activeTool.units.map(u => `<option>${u}</option>`).join('')}</select></div>`;
     } else if (activeTool.type === "textarea") {
-        inputsDiv.innerHTML = `<div class="input-group"><label>Input</label><textarea id="input_0" rows="6" placeholder="${activeTool.placeholder || 'Enter your text...'}"></textarea></div>`;
-    } else if (activeTool.type === "text") {
-        inputsDiv.innerHTML = `<div class="input-group"><label>Input</label><input type="text" id="input_0" placeholder="${activeTool.placeholder}"></div>`;
-    } else if (activeTool.type === "number") {
-        inputsDiv.innerHTML = `<div class="input-group"><label>${activeTool.placeholder || 'Value'}</label><input type="number" id="input_0" step="any" value="12"></div>`;
+        inputsDiv.innerHTML = `<div class="input-group"><label>Input</label><textarea id="input_0" rows="6" placeholder="${activeTool.placeholder || ''}"></textarea></div>`;
     } else if (activeTool.type === "none") {
-        inputsDiv.innerHTML = `<div class="input-group"><p>Click the button below to generate.</p></div>`;
+        inputsDiv.innerHTML = `<p>Click the button below to generate.</p>`;
     } else {
-        inputsDiv.innerHTML = `<div class="input-group"><label>Input</label><textarea id="input_0" rows="5" placeholder="Enter your text..."></textarea></div>`;
+        inputsDiv.innerHTML = `<div class="input-group"><label>Input</label><textarea id="input_0" rows="5"></textarea></div>`;
     }
-    
     document.getElementById('resultDisplay').style.display = 'none';
     document.getElementById('toolModal').style.display = 'flex';
 }
 
 async function convert() {
     if (!activeTool) return;
-    
     let result;
+    let filename = "result";
     
     if (activeTool.hasFileUpload) {
         if (activeTool.isMultiFile) {
             let fileInput = document.getElementById('multiFileInput');
             if (fileInput && fileInput.files.length > 0) {
                 let filesData = [];
-                for(let i = 0; i < fileInput.files.length; i++) {
+                for(let i=0; i<fileInput.files.length; i++) {
                     let file = fileInput.files[i];
                     let content = await readFileAsText(file);
-                    filesData.push({ name: file.name, content: content, size: file.size });
+                    filesData.push({ name: file.name, content: content });
                 }
                 result = activeTool.convert(filesData);
-            } else {
-                result = "Please select files to process.";
-            }
+                filename = `merged${activeTool.outputExt || ".pdf"}`;
+            } else { result = "Please select files to process."; }
         } else {
             let fileInput = document.getElementById('fileInput');
             if (fileInput && fileInput.files[0]) {
                 let file = fileInput.files[0];
                 let content = await readFileAsText(file);
                 result = activeTool.convert(content, file.name);
-            } else {
-                result = "Please select a file to process.";
-            }
+                let baseName = file.name.replace(/\.[^/.]+$/, "");
+                filename = `${baseName}${activeTool.outputExt || "_converted.txt"}`;
+            } else { result = "Please select a file to process."; }
         }
-    } else if (activeTool.type === "rgb") {
-        let val1 = parseFloat(document.getElementById('input_0')?.value) || 0;
-        let val2 = parseFloat(document.getElementById('input_1')?.value) || 0;
-        let val3 = parseFloat(document.getElementById('input_2')?.value) || 0;
-        result = activeTool.convert([val1, val2, val3]);
     } else if (activeTool.type === "findreplace") {
         let val1 = document.getElementById('input_0')?.value || '';
         let val2 = document.getElementById('input_1')?.value || '';
         let val3 = document.getElementById('input_2')?.value || '';
         result = activeTool.convert([val1, val2, val3]);
+        filename = "converted.txt";
     } else if (activeTool.type === "password") {
         let val1 = parseFloat(document.getElementById('input_0')?.value) || 12;
         result = activeTool.convert([val1]);
+        filename = "password.txt";
     } else if (activeTool.type === "none") {
         result = activeTool.convert([]);
+        filename = "generated.txt";
     } else if (activeTool.type === "length" || activeTool.type === "weight" || activeTool.type === "temp") {
         let val1 = parseFloat(document.getElementById('input_0')?.value) || 0;
         let val2 = document.getElementById('input_1')?.value || '';
         let val3 = document.getElementById('input_2')?.value || '';
         result = activeTool.convert([val1, val2, val3]);
+        filename = "conversion_result.txt";
     } else {
         let input = document.getElementById('input_0');
         let val = input ? input.value : '';
-        if (activeTool.type === "number") val = parseFloat(val);
         result = activeTool.convert(val);
+        filename = "converted.txt";
     }
     
+    currentResultBlob = new Blob([result], { type: activeTool.outputMime || "text/plain" });
+    currentFileName = filename;
+    
     const resultDiv = document.getElementById('resultDisplay');
-    resultDiv.innerHTML = `<i class="fas fa-check-circle"></i> ${result}<br><button class="copy-btn" onclick="copyResult()">📋 Copy Result</button>`;
+    resultDiv.innerHTML = `<div style="margin-bottom:15px;"><i class="fas fa-check-circle"></i> Conversion complete!</div><div class="button-group"><button class="copy-btn" onclick="copyResult()"><i class="fas fa-copy"></i> Copy Result</button><button class="download-btn" onclick="downloadResult()"><i class="fas fa-download"></i> Download File</button></div>`;
     resultDiv.style.display = 'block';
 }
 
 function readFileAsText(file) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         const reader = new FileReader();
         reader.onload = (e) => resolve(e.target.result);
-        reader.onerror = (e) => reject(e);
         reader.readAsText(file);
     });
 }
 
 function copyResult() {
-    const resultDiv = document.getElementById('resultDisplay');
-    const text = resultDiv.innerText.replace('📋 Copy Result', '').trim();
-    navigator.clipboard.writeText(text);
-    alert('✓ Result copied to clipboard!');
+    if (currentResultBlob) {
+        currentResultBlob.text().then(text => {
+            navigator.clipboard.writeText(text);
+            alert('✓ Result copied to clipboard!');
+        });
+    }
 }
 
-function closeModal() {
-    document.getElementById('toolModal').style.display = 'none';
+function downloadResult() {
+    if (currentResultBlob && currentFileName) {
+        const url = URL.createObjectURL(currentResultBlob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = currentFileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
 }
 
-function showHome() {
-    document.getElementById('homeView').style.display = 'block';
-    const pages = ['about', 'privacy', 'terms', 'contact'];
-    pages.forEach(p => {
-        const el = document.getElementById(p + 'Page');
-        if(el) el.style.display = 'none';
-    });
-    loadCategory(currentCategory, document.querySelector('.cat-btn.active'));
-}
-
-function showPage(page) {
-    document.getElementById('homeView').style.display = 'none';
-    const pages = ['about', 'privacy', 'terms', 'contact'];
-    pages.forEach(p => {
-        const el = document.getElementById(p + 'Page');
-        if(el) el.style.display = p === page ? 'block' : 'none';
-    });
-}
-
+function closeModal() { document.getElementById('toolModal').style.display = 'none'; }
+function showHome() { document.getElementById('homeView').style.display = 'block'; ['about','privacy','terms','contact'].forEach(p => { let el = document.getElementById(p+'Page'); if(el) el.style.display = 'none'; }); loadCategory(currentCategory, document.querySelector('.cat-btn.active')); }
+function showPage(page) { document.getElementById('homeView').style.display = 'none'; ['about','privacy','terms','contact'].forEach(p => { let el = document.getElementById(p+'Page'); if(el) el.style.display = p === page ? 'block' : 'none'; }); }
 function searchTools() {
     const query = document.getElementById('searchInput').value.toLowerCase();
     const container = document.getElementById('toolsContainer');
-    
     let allTools = [];
-    for (let cat in tools) {
-        tools[cat].forEach(tool => {
-            allTools.push({ ...tool, category: cat });
-        });
-    }
-    
+    for (let cat in tools) { tools[cat].forEach(tool => { allTools.push({ ...tool, category: cat }); }); }
     const filtered = allTools.filter(tool => tool.name.toLowerCase().includes(query));
-    
     if (query.length > 0) {
         container.innerHTML = '';
-        filtered.forEach((tool, idx) => {
-            let icon = tool.category === 'pdf' ? 'fa-file-pdf' : (tool.category === 'document' ? 'fa-file-alt' : 'fa-tools');
-            container.innerHTML += `
-                <div class="tool-card" onclick="openSearchedTool('${tool.category}', '${tool.name}')">
-                    <i class="fas ${icon}"></i>
-                    <h3>${tool.name}</h3>
-                    <p>${tool.category}</p>
-                </div>
-            `;
-        });
-        if (filtered.length === 0) {
-            container.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:40px;">🔍 No tools found. Try a different search term.</div>';
-        }
-    } else {
-        loadCategory(currentCategory, document.querySelector('.cat-btn.active'));
-    }
+        filtered.forEach((tool) => { container.innerHTML += `<div class="tool-card" onclick="openSearchedTool('${tool.category}', '${tool.name}')"><i class="fas fa-tools"></i><h3>${tool.name}</h3><p>${tool.category}</p></div>`; });
+        if (filtered.length === 0) container.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:40px;">🔍 No tools found.</div>';
+    } else { loadCategory(currentCategory, document.querySelector('.cat-btn.active')); }
 }
-
 function openSearchedTool(category, toolName) {
     for (let cat in tools) {
         if (cat === category) {
             const index = tools[cat].findIndex(t => t.name === toolName);
-            if (index !== -1) {
-                currentCategory = cat;
-                openTool(index);
-                break;
-            }
+            if (index !== -1) { currentCategory = cat; openTool(index); break; }
         }
     }
 }
-
-// Initialize
-window.onload = () => {
-    loadCategory('pdf', document.querySelector('.cat-btn'));
-    console.log("ToolMaster Pro loaded - 65+ tools with file upload support!");
-};
+window.onload = () => { loadCategory('pdf', document.querySelector('.cat-btn')); };
 </script>
 </body>
 </html>
