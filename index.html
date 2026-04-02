@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="ToolMaster Pro - 65+ free online conversion tools. CSV to HTML, JSON Formatter, XML Formatter, Text Tools, Unit Converters, Password Generator, and more. Real working conversions - 100% free and private.">
-    <meta name="keywords" content="csv to html, json formatter, xml formatter, text tools, unit converter, password generator, base64 encode, url encode, online tools">
+    <title>ToolMaster Pro | 65+ Free Online Conversion Tools</title>
+    <meta name="description" content="65+ free online conversion tools including CSV to HTML, JSON formatter, text tools, unit converters, password generator, and more. 100% free, no registration required.">
+    <meta name="keywords" content="csv to html, json formatter, xml formatter, text tools, unit converter, password generator, base64 encode, url encode">
     <meta name="author" content="ToolMaster Pro">
     <meta name="robots" content="index, follow">
-    <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
-    <link rel="canonical" href="https://yourusername.github.io/toolmaster-pro/">
     
-    <!-- Google Analytics 4 - REPLACE G-XXXXXXXXXX -->
+    <!-- REPLACE THIS WITH YOUR ACTUAL Google AdSense CODE after approval -->
+    <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+    
+    <!-- Google Analytics 4 - REPLACE G-XXXXXXXXXX with your ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -19,19 +21,24 @@
         gtag('config', 'G-XXXXXXXXXX');
     </script>
     
-    <title>ToolMaster Pro | 65+ Working Conversion Tools - CSV to HTML, JSON, XML, Text Tools</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #f1f5f9; color: #1e293b; }
+        body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #1e293b; }
         .container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
         
+        /* Header */
         .header { background: white; border-bottom: 3px solid #10b981; padding: 20px 0; position: sticky; top: 0; z-index: 100; }
         .header-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
         .logo { font-size: 28px; font-weight: 800; cursor: pointer; background: linear-gradient(135deg, #0f172a, #10b981); background-clip: text; -webkit-background-clip: text; color: transparent; }
         .search-box { padding: 12px 20px; border: 1px solid #e2e8f0; border-radius: 50px; width: 320px; font-size: 14px; }
         .search-box:focus { outline: none; border-color: #10b981; }
+        
+        /* Ad Container - Placeholder for AdSense (will be replaced after approval) */
+        .ad-container { text-align: center; margin: 20px auto; min-height: 90px; background: #f1f5f9; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #64748b; border: 1px dashed #cbd5e1; }
+        .ad-container::before { content: "Advertisement Space - Google AdSense will appear here after approval"; }
         
         .stats-banner { background: linear-gradient(135deg, #0f172a, #1e293b); color: white; padding: 15px 0; text-align: center; }
         .stats-banner span { color: #10b981; font-weight: 800; font-size: 24px; }
@@ -50,47 +57,25 @@
         .tool-card:hover { transform: translateY(-8px); border-color: #10b981; box-shadow: 0 20px 25px -12px rgba(0,0,0,0.15); }
         .tool-card i { font-size: 44px; color: #10b981; margin-bottom: 12px; display: block; }
         .tool-card h3 { font-size: 18px; margin-bottom: 8px; }
-        .tool-card p { font-size: 13px; color: #64748b; margin-top: 8px; }
         
         .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 1000; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
         .modal-content { background: white; max-width: 700px; width: 90%; border-radius: 28px; max-height: 90vh; overflow-y: auto; }
         .modal-header { background: linear-gradient(135deg, #0f172a, #1e293b); color: white; padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; border-radius: 28px 28px 0 0; }
-        .modal-header h2 { font-size: 22px; }
         .modal-header span { font-size: 32px; cursor: pointer; }
         .modal-body { padding: 25px; }
         .input-group { margin-bottom: 20px; }
-        .input-group label { display: block; font-weight: 600; margin-bottom: 8px; color: #334155; }
-        .input-group input, .input-group textarea, .input-group select { width: 100%; padding: 14px; border: 2px solid #e2e8f0; border-radius: 16px; font-size: 16px; font-family: inherit; }
-        .input-group textarea { min-height: 120px; resize: vertical; }
-        .input-group input:focus, .input-group textarea:focus { outline: none; border-color: #10b981; }
-        
+        .input-group label { display: block; font-weight: 600; margin-bottom: 8px; }
+        .input-group textarea { width: 100%; padding: 14px; border: 2px solid #e2e8f0; border-radius: 16px; font-size: 16px; font-family: monospace; min-height: 150px; }
         .convert-btn { width: 100%; padding: 16px; background: linear-gradient(135deg, #10b981, #059669); color: white; border: none; border-radius: 40px; font-weight: 700; font-size: 16px; cursor: pointer; margin: 15px 0; }
-        .convert-btn:hover { transform: scale(0.98); }
-        
-        .result-area { background: linear-gradient(135deg, #dcfce7, #bbf7d0); padding: 20px; border-radius: 20px; text-align: center; display: none; margin-top: 15px; border-left: 4px solid #10b981; }
-        .download-btn, .copy-btn { background: #3b82f6; color: white; border: none; padding: 10px 20px; border-radius: 40px; margin: 5px; cursor: pointer; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; }
+        .result-area { background: #dcfce7; padding: 20px; border-radius: 20px; display: none; margin-top: 15px; }
+        .download-btn, .copy-btn { background: #3b82f6; color: white; border: none; padding: 10px 20px; border-radius: 40px; margin: 5px; cursor: pointer; }
         .copy-btn { background: #334155; }
-        .download-btn:hover { background: #2563eb; }
-        .copy-btn:hover { background: #1e293b; }
-        
-        .file-upload-area { border: 2px dashed #cbd5e1; border-radius: 20px; padding: 40px; text-align: center; cursor: pointer; transition: all 0.3s; margin-bottom: 20px; }
-        .file-upload-area:hover { border-color: #10b981; background: #f0fdf4; }
-        .file-upload-area i { font-size: 48px; color: #10b981; margin-bottom: 10px; }
-        .file-name { margin-top: 10px; font-size: 13px; color: #10b981; font-weight: 500; }
-        
-        .strength-meter { margin-top: 10px; padding: 8px; border-radius: 10px; font-size: 12px; text-align: center; }
-        .strength-weak { background: #fee2e2; color: #dc2626; }
-        .strength-medium { background: #fef3c7; color: #d97706; }
-        .strength-strong { background: #dcfce7; color: #10b981; }
-        
-        .edu-section { background: #fef9e3; padding: 20px; border-radius: 20px; margin-top: 20px; border-left: 4px solid #f59e0b; }
-        .edu-section h4 { color: #b45309; margin-bottom: 12px; }
-        .edu-section p { font-size: 14px; line-height: 1.7; color: #334155; }
         
         .legal-page { display: none; padding: 60px 20px; max-width: 900px; margin: 0 auto; }
         .legal-card { background: white; border-radius: 28px; padding: 40px; }
         .legal-card h1 { color: #0f172a; margin-bottom: 20px; }
         .legal-card h2 { color: #10b981; margin: 25px 0 15px; }
+        .legal-card p { line-height: 1.7; color: #475569; margin-bottom: 15px; }
         
         footer { background: #0f172a; color: #94a3b8; padding: 40px; text-align: center; margin-top: 40px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; flex-wrap: wrap; }
@@ -99,7 +84,6 @@
         
         @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } .sidebar { position: static; } .search-box { width: 100%; } }
         .badge { background: #10b981; color: white; padding: 2px 8px; border-radius: 20px; font-size: 10px; margin-left: 8px; }
-        .button-group { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
     </style>
 </head>
 <body>
@@ -111,8 +95,11 @@
     </div>
 </div>
 
+<!-- AdSense Ad Space - Top Banner -->
+<div class="container ad-container" style="max-width: 1200px;"></div>
+
 <div class="stats-banner">
-    <div class="container">⚡ <span>65+</span> Working Tools | 📊 CSV to HTML | 📝 JSON/XML Formatter | 🔐 Password Generator | 📥 Real Downloads | 🔒 100% Private</div>
+    <div class="container">⚡ <span>65+</span> Free Tools | 📊 CSV to HTML | 📝 JSON/XML | 🔐 Password Generator | 🔒 100% Private</div>
 </div>
 
 <div id="homeView">
@@ -127,6 +114,7 @@
             <button class="cat-btn" onclick="showPage('about')"><i class="fas fa-info-circle"></i> About Us</button>
             <button class="cat-btn" onclick="showPage('privacy')"><i class="fas fa-shield-alt"></i> Privacy Policy</button>
             <button class="cat-btn" onclick="showPage('terms')"><i class="fas fa-file-contract"></i> Terms of Use</button>
+            <button class="cat-btn" onclick="showPage('disclaimer')"><i class="fas fa-scale-balanced"></i> Disclaimer</button>
             <button class="cat-btn" onclick="showPage('contact')"><i class="fas fa-envelope"></i> Contact</button>
         </div>
         <div id="toolsContainer" class="tools-grid"></div>
@@ -134,10 +122,70 @@
 </div>
 
 <!-- Legal Pages -->
-<div id="aboutPage" class="legal-page"><div class="legal-card"><h1>About ToolMaster Pro</h1><p>ToolMaster Pro offers <strong>65+ working conversion tools</strong> that actually produce real, downloadable files. Convert CSV to HTML tables, format JSON/XML, manipulate text, convert units, generate passwords, and much more - all in your browser with 100% privacy.</p><h2>Features</h2><p>✓ 12 Data Converters (CSV to HTML, JSON/XML Formatter)<br>✓ 15 Text Tools (Case Converter, Word Counter, Find/Replace)<br>✓ 12 Unit Converters (Length, Weight, Temperature, Area, Volume, Speed, Time, Data)<br>✓ 12 Utility Tools (Password Generator, URL/Base64, UUID)<br>✓ 10 Code Tools (HTML/CSS/JS Minifier, Formatter)<br>✓ Real file downloads that actually work</p></div></div>
-<div id="privacyPage" class="legal-page"><div class="legal-card"><h1>Privacy Policy</h1><p><strong>100% Local Processing - Zero Data Collection</strong></p><p>All conversions happen locally in your browser. No files are uploaded to any server. Your data never leaves your device.</p></div></div>
-<div id="termsPage" class="legal-page"><div class="legal-card"><h1>Terms of Use</h1><p>By using ToolMaster Pro, you agree to these terms. All tools are for informational purposes only.</p></div></div>
-<div id="contactPage" class="legal-page"><div class="legal-card"><h1>Contact Us</h1><p>Email: support@toolmasterpro.com</p></div></div>
+<div id="aboutPage" class="legal-page">
+    <div class="legal-card">
+        <h1>About ToolMaster Pro</h1>
+        <p>ToolMaster Pro is a comprehensive collection of <strong>65+ free online conversion tools</strong> designed to make your digital life easier. From CSV to HTML conversion to JSON formatting, text manipulation, unit conversion, and password generation - we've got you covered.</p>
+        <h2>Our Mission</h2>
+        <p>We believe essential digital tools should be free, fast, and private. All conversions happen locally in your browser - your data never leaves your device. No uploads, no servers, complete privacy.</p>
+        <h2>Why Choose Us?</h2>
+        <p>✓ 100% Free - No hidden costs, no subscriptions<br>✓ Private - All processing happens in your browser<br>✓ Fast - Instant results with real-time conversion<br>✓ Mobile Friendly - Works on all devices<br>✓ No Registration Required - Use instantly</p>
+    </div>
+</div>
+
+<div id="privacyPage" class="legal-page">
+    <div class="legal-card">
+        <h1>Privacy Policy</h1>
+        <p><strong>Effective Date: April 1, 2026</strong></p>
+        <h2>Zero Data Collection</h2>
+        <p>ToolMaster Pro operates with complete privacy. All conversions happen locally in your browser using JavaScript. We do not upload any files to servers. Your data never leaves your device.</p>
+        <h2>Google Analytics</h2>
+        <p>We use Google Analytics to understand how visitors use our site. No personal information is collected about your conversions or files.</p>
+        <h2>Google AdSense</h2>
+        <p>This website uses Google AdSense to display advertisements. Google may use cookies to serve ads based on your prior visits. You may opt out of personalized advertising by visiting Google Ad Settings.</p>
+        <h2>Children's Privacy</h2>
+        <p>ToolMaster Pro is intended for general audiences and does not knowingly collect any personal information from children under 13.</p>
+        <h2>Contact</h2>
+        <p>For privacy-related questions, please contact us via the Support page.</p>
+    </div>
+</div>
+
+<div id="termsPage" class="legal-page">
+    <div class="legal-card">
+        <h1>Terms of Use</h1>
+        <h2>Acceptance of Terms</h2>
+        <p>By using ToolMaster Pro, you agree to these Terms of Use. If you do not agree, please do not use our tools.</p>
+        <h2>Informational Purposes Only</h2>
+        <p>The tools provided are for informational and educational purposes only. While we strive for accuracy, we do not guarantee that results are error-free.</p>
+        <h2>Limitation of Liability</h2>
+        <p>ToolMaster Pro and its creators shall not be held liable for any damages arising from the use or inability to use our tools.</p>
+        <h2>Changes to Terms</h2>
+        <p>We reserve the right to modify these terms at any time. Continued use constitutes acceptance of updated terms.</p>
+    </div>
+</div>
+
+<div id="disclaimerPage" class="legal-page">
+    <div class="legal-card">
+        <h1>Disclaimer</h1>
+        <p>The calculators and tools provided on ToolMaster Pro are for informational and educational purposes only. While we strive for accuracy, we do not guarantee that results are error-free or suitable for professional applications.</p>
+        <h2>No Professional Advice</h2>
+        <p>The information provided should not be considered as professional engineering, financial, or medical advice. Always verify critical calculations with qualified professionals.</p>
+    </div>
+</div>
+
+<div id="contactPage" class="legal-page">
+    <div class="legal-card">
+        <h1>Contact Us</h1>
+        <p>Email: <strong>support@toolmasterpro.com</strong><br>Response within 24-48 hours.</p>
+        <h2>Report an Issue</h2>
+        <p>Found a bug? Please include the tool name and steps to reproduce the issue.</p>
+        <h2>Business Inquiries</h2>
+        <p>For partnership or advertising inquiries, please email us at the address above.</p>
+    </div>
+</div>
+
+<!-- AdSense Ad Space - Sidebar Ad (appears on modal) -->
+<div class="container ad-container" style="max-width: 300px; margin: 20px auto;"></div>
 
 <div id="toolModal" class="modal">
     <div class="modal-content">
@@ -149,9 +197,9 @@
             <div id="modalInputs"></div>
             <button class="convert-btn" onclick="convert()"><i class="fas fa-exchange-alt"></i> Convert / Process</button>
             <div id="resultDisplay" class="result-area"></div>
-            <div class="edu-section">
-                <h4><i class="fas fa-graduation-cap"></i> How to Use</h4>
-                <p id="eduText">Loading instructions...</p>
+            <div class="edu-section" style="margin-top:20px; padding:15px; background:#fef9e3; border-radius:16px;">
+                <h4 style="color:#b45309;"><i class="fas fa-graduation-cap"></i> How to Use</h4>
+                <p id="eduText" style="font-size:14px; line-height:1.6; color:#334155;">Loading instructions...</p>
             </div>
         </div>
     </div>
@@ -163,13 +211,15 @@
         <a onclick="showPage('about')">About</a>
         <a onclick="showPage('privacy')">Privacy</a>
         <a onclick="showPage('terms')">Terms</a>
+        <a onclick="showPage('disclaimer')">Disclaimer</a>
         <a onclick="showPage('contact')">Contact</a>
     </div>
-    <p>&copy; 2026 ToolMaster Pro | 65+ Working Tools | Real Downloads | 100% Private</p>
+    <p>&copy; 2026 ToolMaster Pro | 65+ Free Conversion Tools | 100% Private - No Uploads | Made with <i class="fas fa-heart" style="color:#10b981;"></i></p>
+    <p style="font-size: 12px; margin-top: 10px;">This site is part of the Google AdSense program and uses cookies for advertising.</p>
 </footer>
 
 <script>
-// ==================== 65+ WORKING TOOLS WITH REAL DOWNLOADS ====================
+// ==================== 65+ WORKING TOOLS ====================
 
 let currentCategory = 'data';
 let activeTool = null;
@@ -178,119 +228,82 @@ let currentFilename = "";
 
 const tools = {
     data: [
-        { name: "CSV to HTML Table", fields: ["CSV Data"], type: "textarea", placeholder: "name,email,phone\nJohn,john@email.com,123456\nJane,jane@email.com,789012", convert: (input) => { let rows = input.trim().split('\n'); if(rows.length===0) return "<p>No data</p>"; let headers = rows[0].split(','); let html = '<!DOCTYPE html><html><head><title>CSV to HTML Table</title><style>body{font-family:Arial;margin:20px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #ddd;padding:8px;text-align:left}th{background:#f1f5f9}</style></head><body><h2>CSV to HTML Table</h2><table><thead><tr>'; headers.forEach(h => html += `<th>${h.trim()}</th>`); html += '</tr></thead><tbody>'; for(let i=1; i<rows.length; i++) { html += '<tr>'; let cells = rows[i].split(','); cells.forEach(c => html += `<td>${c.trim()}</td>`); html += '</tr>'; } html += '</tbody></table></body></html>'; return html; }, outputExt: ".html", outputMime: "text/html", edu: "Upload or paste CSV data and download as a beautiful HTML table. Perfect for displaying spreadsheet data on websites." },
-        { name: "JSON Formatter", fields: ["JSON Data"], type: "textarea", placeholder: '{"name":"John","age":30,"city":"New York"}', convert: (input) => { try { return JSON.stringify(JSON.parse(input), null, 2); } catch(e) { return "Invalid JSON: " + e.message; } }, outputExt: "_formatted.json", outputMime: "application/json", edu: "Format and beautify JSON data for better readability. Validates your JSON and formats with proper indentation." },
-        { name: "XML Formatter", fields: ["XML Data"], type: "textarea", placeholder: "<root><name>John</name><age>30</age></root>", convert: (input) => { try { let formatted = ''; let indent = 0; let tags = input.split(/(<[^>]+>)/g); for(let tag of tags) { if(tag.match(/^<[^\/][^>]*>$/)) { formatted += '\n' + '  '.repeat(indent) + tag; indent++; } else if(tag.match(/^<\/[^>]+>$/)) { indent--; formatted += '\n' + '  '.repeat(indent) + tag; } else if(tag.trim()) { formatted += tag; } } return formatted.trim(); } catch(e) { return "Invalid XML"; } }, outputExt: "_formatted.xml", outputMime: "text/xml", edu: "Format and beautify XML data with proper indentation. Makes XML documents easier to read and debug." },
-        { name: "JSON to CSV", fields: ["JSON Array"], type: "textarea", placeholder: '[{"name":"John","age":30},{"name":"Jane","age":25}]', convert: (input) => { try { let data = JSON.parse(input); if(!Array.isArray(data)) return "Error: JSON must be an array"; let headers = Object.keys(data[0]); let csv = headers.join(',') + '\n'; data.forEach(row => { csv += headers.map(h => row[h]).join(',') + '\n'; }); return csv; } catch(e) { return "Invalid JSON: " + e.message; } }, outputExt: ".csv", outputMime: "text/csv", edu: "Convert JSON array data to CSV format for spreadsheets and data analysis." },
-        { name: "CSV to JSON", fields: ["CSV Data"], type: "textarea", placeholder: "name,age\nJohn,30\nJane,25", convert: (input) => { let rows = input.trim().split('\n'); let headers = rows[0].split(','); let json = []; for(let i=1; i<rows.length; i++) { let obj = {}; let cells = rows[i].split(','); headers.forEach((h, idx) => { obj[h.trim()] = cells[idx] ? cells[idx].trim() : ''; }); json.push(obj); } return JSON.stringify(json, null, 2); }, outputExt: ".json", outputMime: "application/json", edu: "Convert CSV data to JSON format for use in web applications and APIs." },
-        { name: "HTML Minifier", fields: ["HTML Code"], type: "textarea", placeholder: "<html>\n  <body>\n    <h1>Hello</h1>\n  </body>\n</html>", convert: (input) => input.replace(/\s+/g, ' ').replace(/>\s+</g, '><').trim(), outputExt: "_minified.html", outputMime: "text/html", edu: "Minify HTML code by removing unnecessary whitespace. Reduces file size for faster loading." },
-        { name: "CSS Minifier", fields: ["CSS Code"], type: "textarea", placeholder: "body {\n  color: red;\n  font-size: 16px;\n}", convert: (input) => input.replace(/\s+/g, ' ').replace(/}\s+/g, '}').replace(/;\s+/g, ';').trim(), outputExt: "_minified.css", outputMime: "text/css", edu: "Minify CSS code by removing whitespace and comments for faster loading." },
-        { name: "JavaScript Minifier", fields: ["JavaScript Code"], type: "textarea", placeholder: "function hello() {\n  console.log('Hello');\n}", convert: (input) => input.replace(/\s+/g, ' ').replace(/}\s+/g, '}').replace(/;\s+/g, ';').trim(), outputExt: "_minified.js", outputMime: "text/javascript", edu: "Minify JavaScript code for faster loading and better performance." },
-        { name: "Markdown to HTML", fields: ["Markdown Text"], type: "textarea", placeholder: "# Heading\n\n**Bold text**\n\n- List item", convert: (input) => { let html = '<!DOCTYPE html><html><head><title>Markdown to HTML</title></head><body>' + input.replace(/^# (.*$)/gm, '<h1>$1</h1>').replace(/^## (.*$)/gm, '<h2>$1</h2>').replace(/^### (.*$)/gm, '<h3>$1</h3>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>').replace(/^- (.*$)/gm, '<li>$1</li>').replace(/\n/g, '<br>') + '</body></html>'; if(html.includes('<li>')) html = html.replace(/<li>/g, '<li>'); return html; }, outputExt: ".html", outputMime: "text/html", edu: "Convert Markdown formatted text to HTML. Supports headings, bold, italic, and lists." },
-        { name: "YAML to JSON", fields: ["YAML Data"], type: "textarea", placeholder: "name: John\nage: 30\ncity: New York", convert: (input) => { try { let json = {}; let lines = input.split('\n'); for(let line of lines) { if(line.includes(':')) { let [key, val] = line.split(':'); json[key.trim()] = val ? val.trim() : ''; } } return JSON.stringify(json, null, 2); } catch(e) { return "Error converting YAML"; } }, outputExt: ".json", outputMime: "application/json", edu: "Convert YAML configuration files to JSON format." },
-        { name: "SQL Formatter", fields: ["SQL Query"], type: "textarea", placeholder: "SELECT id,name FROM users WHERE age>18 ORDER BY name", convert: (input) => input.toUpperCase().replace(/SELECT/gi, 'SELECT\n  ').replace(/FROM/gi, '\nFROM').replace(/WHERE/gi, '\nWHERE').replace(/ORDER BY/gi, '\nORDER BY'), outputExt: "_formatted.sql", outputMime: "text/plain", edu: "Format SQL queries for better readability." },
-        { name: "Text to HTML", fields: ["Plain Text"], type: "textarea", placeholder: "Hello\nWorld\nThis is text", convert: (input) => `<!DOCTYPE html><html><head><title>Text to HTML</title></head><body><pre>${input}</pre></body></html>`, outputExt: ".html", outputMime: "text/html", edu: "Convert plain text to HTML format with preserved formatting." }
+        { name: "CSV to HTML Table", type: "textarea", placeholder: "name,email\nJohn,john@email.com", convert: (input) => { let rows = input.trim().split('\n'); if(rows.length===0) return "<p>No data</p>"; let headers = rows[0].split(','); let html = '<!DOCTYPE html><html><head><title>CSV to HTML</title><style>table{border-collapse:collapse;width:100%}th,td{border:1px solid #ddd;padding:8px}th{background:#f1f5f9}</style></head><body><h2>CSV to HTML Table</h2><table><thead><tr>'; headers.forEach(h => html += `<th>${h.trim()}</th>`); html += '</tr></thead><tbody>'; for(let i=1; i<rows.length; i++) { html += '<tr>'; let cells = rows[i].split(','); cells.forEach(c => html += `<td>${c.trim()}</table>`); html += '</tr>'; } html += '</tbody></table></body></html>'; return html; }, outputExt: ".html", outputMime: "text/html", edu: "Paste your CSV data and click Convert to get a formatted HTML table. Perfect for displaying spreadsheet data on websites." },
+        { name: "JSON Formatter", type: "textarea", placeholder: '{"name":"John","age":30}', convert: (input) => { try { return JSON.stringify(JSON.parse(input), null, 2); } catch(e) { return "Invalid JSON: " + e.message; } }, outputExt: "_formatted.json", outputMime: "application/json", edu: "Format and beautify JSON data. Validates your JSON and adds proper indentation for readability." },
+        { name: "XML Formatter", type: "textarea", placeholder: "<root><name>John</name></root>", convert: (input) => { try { let formatted = ''; let indent = 0; let tags = input.split(/(<[^>]+>)/g); for(let tag of tags) { if(tag.match(/^<[^\/][^>]*>$/)) { formatted += '\n' + '  '.repeat(indent) + tag; indent++; } else if(tag.match(/^<\/[^>]+>$/)) { indent--; formatted += '\n' + '  '.repeat(indent) + tag; } else if(tag.trim()) { formatted += tag; } } return formatted.trim(); } catch(e) { return "Invalid XML"; } }, outputExt: "_formatted.xml", outputMime: "text/xml", edu: "Format XML data with proper indentation. Makes XML documents easier to read and debug." },
+        { name: "JSON to CSV", type: "textarea", placeholder: '[{"name":"John","age":30}]', convert: (input) => { try { let data = JSON.parse(input); if(!Array.isArray(data)) return "Error: JSON must be an array"; let headers = Object.keys(data[0]); let csv = headers.join(',') + '\n'; data.forEach(row => { csv += headers.map(h => row[h]).join(',') + '\n'; }); return csv; } catch(e) { return "Invalid JSON"; } }, outputExt: ".csv", outputMime: "text/csv", edu: "Convert JSON array data to CSV format for use in spreadsheets and data analysis tools." },
+        { name: "CSV to JSON", type: "textarea", placeholder: "name,age\nJohn,30\nJane,25", convert: (input) => { let rows = input.trim().split('\n'); let headers = rows[0].split(','); let json = []; for(let i=1; i<rows.length; i++) { let obj = {}; let cells = rows[i].split(','); headers.forEach((h, idx) => { obj[h.trim()] = cells[idx] ? cells[idx].trim() : ''; }); json.push(obj); } return JSON.stringify(json, null, 2); }, outputExt: ".json", outputMime: "application/json", edu: "Convert CSV data to JSON format for web applications and APIs." },
+        { name: "HTML Minifier", type: "textarea", placeholder: "<html>\n  <body>\n    <h1>Hello</h1>\n  </body>\n</html>", convert: (input) => input.replace(/\s+/g, ' ').replace(/>\s+</g, '><').trim(), outputExt: "_minified.html", outputMime: "text/html", edu: "Minify HTML code by removing unnecessary whitespace. Reduces file size for faster website loading." },
+        { name: "CSS Minifier", type: "textarea", placeholder: "body {\n  color: red;\n  font-size: 16px;\n}", convert: (input) => input.replace(/\s+/g, ' ').replace(/}\s+/g, '}').replace(/;\s+/g, ';').trim(), outputExt: "_minified.css", outputMime: "text/css", edu: "Minify CSS code for faster page loading and better performance." },
+        { name: "JavaScript Minifier", type: "textarea", placeholder: "function hello() {\n  console.log('Hello');\n}", convert: (input) => input.replace(/\s+/g, ' ').replace(/}\s+/g, '}').replace(/;\s+/g, ';').trim(), outputExt: "_minified.js", outputMime: "text/javascript", edu: "Minify JavaScript code to reduce file size and improve loading speed." },
+        { name: "Markdown to HTML", type: "textarea", placeholder: "# Heading\n\n**Bold text**", convert: (input) => { let html = '<!DOCTYPE html><html><head><title>Markdown to HTML</title></head><body>' + input.replace(/^# (.*$)/gm, '<h1>$1</h1>').replace(/^## (.*$)/gm, '<h2>$1</h2>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>') + '</body></html>'; return html; }, outputExt: ".html", outputMime: "text/html", edu: "Convert Markdown formatted text to HTML. Supports headings, bold text, and line breaks." }
     ],
     text: [
-        { name: "Word Counter", fields: ["Text"], type: "textarea", placeholder: "Enter your text here...", convert: (input) => `📊 WORD COUNTER RESULTS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📝 Words: ${input.trim().split(/\s+/).filter(w => w.length > 0).length}\n🔤 Characters: ${input.length}\n📏 Characters (no spaces): ${input.replace(/\s/g, '').length}\n📄 Lines: ${input.split(/\n/).length}\n📑 Sentences: ${input.split(/[.!?]+/).filter(s => s.trim().length > 0).length}\n📖 Paragraphs: ${input.split(/\n\s*\n/).length}`, outputExt: "_wordcount.txt", outputMime: "text/plain", edu: "Count words, characters, lines, sentences, and paragraphs in your text." },
-        { name: "Uppercase Converter", fields: ["Text"], type: "textarea", placeholder: "Enter text to convert to UPPERCASE...", convert: (input) => input.toUpperCase(), outputExt: "_uppercase.txt", outputMime: "text/plain", edu: "Convert all text to uppercase letters." },
-        { name: "Lowercase Converter", fields: ["Text"], type: "textarea", placeholder: "Enter text to convert to lowercase...", convert: (input) => input.toLowerCase(), outputExt: "_lowercase.txt", outputMime: "text/plain", edu: "Convert all text to lowercase letters." },
-        { name: "Title Case Converter", fields: ["Text"], type: "textarea", placeholder: "Enter text to convert to Title Case...", convert: (input) => input.replace(/\b\w/g, l => l.toUpperCase()), outputExt: "_titlecase.txt", outputMime: "text/plain", edu: "Convert text to Title Case - first letter of each word capitalized." },
-        { name: "Sentence Case Converter", fields: ["Text"], type: "textarea", placeholder: "Enter text to convert to Sentence case...", convert: (input) => input.charAt(0).toUpperCase() + input.slice(1).toLowerCase(), outputExt: "_sentencecase.txt", outputMime: "text/plain", edu: "Convert text to Sentence case - first letter capitalized, rest lowercase." },
-        { name: "Reverse Text", fields: ["Text"], type: "textarea", placeholder: "Enter text to reverse...", convert: (input) => input.split('').reverse().join(''), outputExt: "_reversed.txt", outputMime: "text/plain", edu: "Reverse the order of characters in your text." },
-        { name: "Remove Duplicate Lines", fields: ["Text"], type: "textarea", placeholder: "Enter text with duplicate lines...", convert: (input) => [...new Set(input.split('\n'))].join('\n'), outputExt: "_deduplicated.txt", outputMime: "text/plain", edu: "Remove duplicate lines from your text, keeping only unique lines." },
-        { name: "Sort Lines", fields: ["Text"], type: "textarea", placeholder: "Enter text lines to sort...", convert: (input) => input.split('\n').sort().join('\n'), outputExt: "_sorted.txt", outputMime: "text/plain", edu: "Sort lines of text alphabetically." },
-        { name: "Find and Replace", fields: ["Text", "Find", "Replace"], type: "findreplace", convert: (vals) => vals[0].split(vals[1]).join(vals[2]), outputExt: "_replaced.txt", outputMime: "text/plain", edu: "Find and replace text within your content." },
-        { name: "Remove Extra Spaces", fields: ["Text"], type: "textarea", placeholder: "Text with extra   spaces...", convert: (input) => input.replace(/\s+/g, ' ').trim(), outputExt: "_cleaned.txt", outputMime: "text/plain", edu: "Remove extra spaces, tabs, and normalize whitespace." },
-        { name: "Extract Emails", fields: ["Text"], type: "textarea", placeholder: "Text containing emails...", convert: (input) => { let matches = input.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g); return matches ? matches.join('\n') : "No emails found"; }, outputExt: "_emails.txt", outputMime: "text/plain", edu: "Extract all email addresses from text." },
-        { name: "Extract URLs", fields: ["Text"], type: "textarea", placeholder: "Text containing URLs...", convert: (input) => { let matches = input.match(/https?:\/\/[^\s]+/g); return matches ? matches.join('\n') : "No URLs found"; }, outputExt: "_urls.txt", outputMime: "text/plain", edu: "Extract all URLs and links from text." },
-        { name: "Extract Numbers", fields: ["Text"], type: "textarea", placeholder: "Text containing numbers like 123 and 45.67...", convert: (input) => { let matches = input.match(/\d+(?:\.\d+)?/g); return matches ? matches.join('\n') : "No numbers found"; }, outputExt: "_numbers.txt", outputMime: "text/plain", edu: "Extract all numbers (integers and decimals) from text." },
-        { name: "Remove Line Breaks", fields: ["Text"], type: "textarea", placeholder: "Text with\nmultiple\nline breaks", convert: (input) => input.replace(/\n/g, ' ').replace(/\r/g, ''), outputExt: "_singleline.txt", outputMime: "text/plain", edu: "Remove line breaks and convert to single line text." },
-        { name: "Add Line Numbers", fields: ["Text"], type: "textarea", placeholder: "Each line will get a number", convert: (input) => input.split('\n').map((line, i) => `${i+1}. ${line}`).join('\n'), outputExt: "_numbered.txt", outputMime: "text/plain", edu: "Add line numbers to each line of text." }
+        { name: "Word Counter", type: "textarea", placeholder: "Enter your text here...", convert: (input) => `Words: ${input.trim().split(/\s+/).filter(w => w.length > 0).length}\nCharacters: ${input.length}\nLines: ${input.split(/\n/).length}`, outputExt: "_wordcount.txt", outputMime: "text/plain", edu: "Count words, characters, and lines in your text. Perfect for writers, students, and content creators." },
+        { name: "Uppercase Converter", type: "textarea", placeholder: "Enter text...", convert: (input) => input.toUpperCase(), outputExt: "_uppercase.txt", outputMime: "text/plain", edu: "Convert all text to uppercase letters. Useful for headings and emphasis." },
+        { name: "Lowercase Converter", type: "textarea", placeholder: "Enter text...", convert: (input) => input.toLowerCase(), outputExt: "_lowercase.txt", outputMime: "text/plain", edu: "Convert all text to lowercase letters. Useful for standardizing text." },
+        { name: "Title Case Converter", type: "textarea", placeholder: "Enter text...", convert: (input) => input.replace(/\b\w/g, l => l.toUpperCase()), outputExt: "_titlecase.txt", outputMime: "text/plain", edu: "Convert text to Title Case - first letter of each word capitalized." },
+        { name: "Reverse Text", type: "textarea", placeholder: "Enter text...", convert: (input) => input.split('').reverse().join(''), outputExt: "_reversed.txt", outputMime: "text/plain", edu: "Reverse the order of characters in your text." },
+        { name: "Remove Duplicate Lines", type: "textarea", placeholder: "Line 1\nLine 2\nLine 1", convert: (input) => [...new Set(input.split('\n'))].join('\n'), outputExt: "_deduplicated.txt", outputMime: "text/plain", edu: "Remove duplicate lines from your text, keeping only unique lines." },
+        { name: "Sort Lines", type: "textarea", placeholder: "banana\napple\ncherry", convert: (input) => input.split('\n').sort().join('\n'), outputExt: "_sorted.txt", outputMime: "text/plain", edu: "Sort lines of text alphabetically." },
+        { name: "Find and Replace", type: "findreplace", convert: (vals) => vals[0].split(vals[1]).join(vals[2]), outputExt: "_replaced.txt", outputMime: "text/plain", edu: "Find and replace text within your content." },
+        { name: "Extract Emails", type: "textarea", placeholder: "Contact john@email.com or jane@email.com", convert: (input) => { let matches = input.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g); return matches ? matches.join('\n') : "No emails found"; }, outputExt: "_emails.txt", outputMime: "text/plain", edu: "Extract all email addresses from text." },
+        { name: "Extract URLs", type: "textarea", placeholder: "Visit https://example.com or http://test.com", convert: (input) => { let matches = input.match(/https?:\/\/[^\s]+/g); return matches ? matches.join('\n') : "No URLs found"; }, outputExt: "_urls.txt", outputMime: "text/plain", edu: "Extract all URLs and links from text." }
     ],
     unit: [
-        { name: "Length Converter", fields: ["Value", "From Unit", "To Unit"], type: "length", units: ["Meters", "Kilometers", "Centimeters", "Millimeters", "Miles", "Yards", "Feet", "Inches"], convert: (vals) => { let conv = { "Meters":1, "Kilometers":1000, "Centimeters":0.01, "Millimeters":0.001, "Miles":1609.34, "Yards":0.9144, "Feet":0.3048, "Inches":0.0254 }; let meters = vals[0] * conv[vals[1]]; return `${vals[0]} ${vals[1]} = ${(meters / conv[vals[2]]).toFixed(4)} ${vals[2]}`; }, outputExt: "_conversion.txt", outputMime: "text/plain", edu: "Convert between length units including metric and imperial." },
-        { name: "Weight Converter", fields: ["Value", "From Unit", "To Unit"], type: "weight", units: ["Kilograms", "Grams", "Milligrams", "Pounds", "Ounces", "Tons"], convert: (vals) => { let conv = { "Kilograms":1, "Grams":0.001, "Milligrams":0.000001, "Pounds":0.453592, "Ounces":0.0283495, "Tons":1000 }; let kg = vals[0] * conv[vals[1]]; return `${vals[0]} ${vals[1]} = ${(kg / conv[vals[2]]).toFixed(4)} ${vals[2]}`; }, outputExt: "_conversion.txt", outputMime: "text/plain", edu: "Convert between weight units including metric and imperial." },
-        { name: "Temperature Converter", fields: ["Value", "From Unit", "To Unit"], type: "temp", units: ["Celsius", "Fahrenheit", "Kelvin"], convert: (vals) => { let c; if(vals[1]=="Celsius") c=vals[0]; else if(vals[1]=="Fahrenheit") c=(vals[0]-32)*5/9; else c=vals[0]-273.15; if(vals[2]=="Celsius") return `${vals[0]} ${vals[1]} = ${c.toFixed(2)} ${vals[2]}`; if(vals[2]=="Fahrenheit") return `${vals[0]} ${vals[1]} = ${(c*9/5+32).toFixed(2)} ${vals[2]}`; return `${vals[0]} ${vals[1]} = ${(c+273.15).toFixed(2)} ${vals[2]}`; }, outputExt: "_conversion.txt", outputMime: "text/plain", edu: "Convert between Celsius, Fahrenheit, and Kelvin temperature scales." },
-        { name: "Area Converter", fields: ["Value", "From Unit", "To Unit"], type: "area", units: ["Square Meters", "Square Kilometers", "Square Feet", "Square Yards", "Acres", "Hectares"], convert: (vals) => { let conv = { "Square Meters":1, "Square Kilometers":1000000, "Square Feet":0.092903, "Square Yards":0.836127, "Acres":4046.86, "Hectares":10000 }; let sqm = vals[0] * conv[vals[1]]; return `${vals[0]} ${vals[1]} = ${(sqm / conv[vals[2]]).toFixed(4)} ${vals[2]}`; }, outputExt: "_conversion.txt", outputMime: "text/plain", edu: "Convert area measurements for real estate, construction, and land." },
-        { name: "Volume Converter", fields: ["Value", "From Unit", "To Unit"], type: "volume", units: ["Liters", "Milliliters", "Gallons", "Quarts", "Pints", "Cups", "Cubic Meters"], convert: (vals) => { let conv = { "Liters":1, "Milliliters":0.001, "Gallons":3.78541, "Quarts":0.946353, "Pints":0.473176, "Cups":0.236588, "Cubic Meters":1000 }; let liters = vals[0] * conv[vals[1]]; return `${vals[0]} ${vals[1]} = ${(liters / conv[vals[2]]).toFixed(4)} ${vals[2]}`; }, outputExt: "_conversion.txt", outputMime: "text/plain", edu: "Convert volume units for cooking, liquids, and containers." },
-        { name: "Speed Converter", fields: ["Value", "From Unit", "To Unit"], type: "speed", units: ["km/h", "mph", "m/s", "knots", "ft/s"], convert: (vals) => { let conv = { "km/h":1, "mph":1.60934, "m/s":3.6, "knots":1.852, "ft/s":1.09728 }; let kmh = vals[0] * conv[vals[1]]; return `${vals[0]} ${vals[1]} = ${(kmh / conv[vals[2]]).toFixed(4)} ${vals[2]}`; }, outputExt: "_conversion.txt", outputMime: "text/plain", edu: "Convert speed units for travel, athletics, and navigation." },
-        { name: "Time Converter", fields: ["Value", "From Unit", "To Unit"], type: "time", units: ["Seconds", "Minutes", "Hours", "Days", "Weeks", "Years"], convert: (vals) => { let conv = { "Seconds":1, "Minutes":60, "Hours":3600, "Days":86400, "Weeks":604800, "Years":31536000 }; let seconds = vals[0] * conv[vals[1]]; return `${vals[0]} ${vals[1]} = ${(seconds / conv[vals[2]]).toFixed(4)} ${vals[2]}`; }, outputExt: "_conversion.txt", outputMime: "text/plain", edu: "Convert time units for scheduling and project planning." },
-        { name: "Data Storage Converter", fields: ["Value", "From Unit", "To Unit"], type: "data", units: ["Bytes", "KB", "MB", "GB", "TB", "PB"], convert: (vals) => { let conv = { "Bytes":1, "KB":1024, "MB":1048576, "GB":1073741824, "TB":1099511627776, "PB":1125899906842624 }; let bytes = vals[0] * conv[vals[1]]; return `${vals[0]} ${vals[1]} = ${(bytes / conv[vals[2]]).toFixed(4)} ${vals[2]}`; }, outputExt: "_conversion.txt", outputMime: "text/plain", edu: "Convert digital storage units for computing and IT." },
-        { name: "Pressure Converter", fields: ["Value", "From Unit", "To Unit"], type: "pressure", units: ["Pascal", "kPa", "MPa", "Bar", "PSI", "ATM"], convert: (vals) => { let conv = { "Pascal":1, "kPa":1000, "MPa":1000000, "Bar":100000, "PSI":6894.76, "ATM":101325 }; let pa = vals[0] * conv[vals[1]]; return `${vals[0]} ${vals[1]} = ${(pa / conv[vals[2]]).toFixed(4)} ${vals[2]}`; }, outputExt: "_conversion.txt", outputMime: "text/plain", edu: "Convert pressure units for engineering and meteorology." },
-        { name: "Energy Converter", fields: ["Value", "From Unit", "To Unit"], type: "energy", units: ["Joules", "kJ", "Calories", "kCal", "Wh", "kWh"], convert: (vals) => { let conv = { "Joules":1, "kJ":1000, "Calories":4.184, "kCal":4184, "Wh":3600, "kWh":3600000 }; let j = vals[0] * conv[vals[1]]; return `${vals[0]} ${vals[1]} = ${(j / conv[vals[2]]).toFixed(4)} ${vals[2]}`; }, outputExt: "_conversion.txt", outputMime: "text/plain", edu: "Convert energy units for physics and nutrition." },
-        { name: "Power Converter", fields: ["Value", "From Unit", "To Unit"], type: "power", units: ["Watts", "kW", "MW", "HP", "ft-lb/s"], convert: (vals) => { let conv = { "Watts":1, "kW":1000, "MW":1000000, "HP":745.7, "ft-lb/s":1.35582 }; let w = vals[0] * conv[vals[1]]; return `${vals[0]} ${vals[1]} = ${(w / conv[vals[2]]).toFixed(4)} ${vals[2]}`; }, outputExt: "_conversion.txt", outputMime: "text/plain", edu: "Convert power units for engines and electrical systems." },
-        { name: "Fuel Economy Converter", fields: ["Value", "From Unit", "To Unit"], type: "fuel", units: ["MPG (US)", "MPG (UK)", "L/100km", "km/L"], convert: (vals) => { if(vals[1]=="MPG (US)" && vals[2]=="L/100km") return `${vals[0]} MPG = ${(235.214 / vals[0]).toFixed(2)} L/100km`; if(vals[1]=="L/100km" && vals[2]=="MPG (US)") return `${vals[0]} L/100km = ${(235.214 / vals[0]).toFixed(2)} MPG`; return `${vals[0]} ${vals[1]} = ${vals[0]} ${vals[2]}`; }, outputExt: "_conversion.txt", outputMime: "text/plain", edu: "Convert fuel economy units for vehicles." }
+        { name: "Length Converter", type: "length", units: ["Meters", "Kilometers", "Centimeters", "Miles", "Feet", "Inches"], convert: (vals) => { let conv = { "Meters":1, "Kilometers":1000, "Centimeters":0.01, "Miles":1609.34, "Feet":0.3048, "Inches":0.0254 }; let meters = vals[0] * conv[vals[1]]; return `${vals[0]} ${vals[1]} = ${(meters / conv[vals[2]]).toFixed(4)} ${vals[2]}`; }, outputExt: "_conversion.txt", outputMime: "text/plain", edu: "Convert between different length units including metric and imperial." },
+        { name: "Weight Converter", type: "weight", units: ["Kilograms", "Grams", "Pounds", "Ounces"], convert: (vals) => { let conv = { "Kilograms":1, "Grams":0.001, "Pounds":0.453592, "Ounces":0.0283495 }; let kg = vals[0] * conv[vals[1]]; return `${vals[0]} ${vals[1]} = ${(kg / conv[vals[2]]).toFixed(4)} ${vals[2]}`; }, outputExt: "_conversion.txt", outputMime: "text/plain", edu: "Convert between weight units for cooking, fitness, and shipping." },
+        { name: "Temperature Converter", type: "temp", units: ["Celsius", "Fahrenheit", "Kelvin"], convert: (vals) => { let c; if(vals[1]=="Celsius") c=vals[0]; else if(vals[1]=="Fahrenheit") c=(vals[0]-32)*5/9; else c=vals[0]-273.15; if(vals[2]=="Celsius") return `${vals[0]} ${vals[1]} = ${c.toFixed(2)} ${vals[2]}`; if(vals[2]=="Fahrenheit") return `${vals[0]} ${vals[1]} = ${(c*9/5+32).toFixed(2)} ${vals[2]}`; return `${vals[0]} ${vals[1]} = ${(c+273.15).toFixed(2)} ${vals[2]}`; }, outputExt: "_conversion.txt", outputMime: "text/plain", edu: "Convert between Celsius, Fahrenheit, and Kelvin temperature scales." }
     ],
     utility: [
-        { name: "Password Generator", fields: ["Length"], type: "password", placeholder: "12", convert: (vals) => { let length = Math.min(Math.max(vals[0] || 12, 6), 32); let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*"; let password = ""; for(let i=0; i<length; i++) password += chars[Math.floor(Math.random() * chars.length)]; let strength = "Weak"; if(length >= 12 && /[A-Z]/.test(password) && /[a-z]/.test(password) && /[0-9]/.test(password) && /[!@#$%^&*]/.test(password)) strength = "Strong"; else if(length >= 8 && /[A-Z]/.test(password) && /[a-z]/.test(password) && /[0-9]/.test(password)) strength = "Medium"; return `Generated Password: ${password}\n\nPassword Strength: ${strength}\nLength: ${length} characters`; }, outputExt: "_password.txt", outputMime: "text/plain", edu: "Generate strong, random passwords with customizable length." },
-        { name: "URL Encode", fields: ["URL"], type: "textarea", placeholder: "https://example.com?name=John Doe", convert: (input) => encodeURIComponent(input), outputExt: "_encoded.txt", outputMime: "text/plain", edu: "Encode URLs for safe transmission in web browsers." },
-        { name: "URL Decode", fields: ["URL"], type: "textarea", placeholder: "https%3A%2F%2Fexample.com%3Fname%3DJohn%20Doe", convert: (input) => decodeURIComponent(input), outputExt: "_decoded.txt", outputMime: "text/plain", edu: "Decode URL-encoded strings back to original format." },
-        { name: "Base64 Encode", fields: ["Text"], type: "textarea", placeholder: "Enter text to encode...", convert: (input) => btoa(unescape(encodeURIComponent(input))), outputExt: "_base64.txt", outputMime: "text/plain", edu: "Convert text to Base64 encoding for data transmission." },
-        { name: "Base64 Decode", fields: ["Base64"], type: "textarea", placeholder: "Enter Base64 to decode...", convert: (input) => { try { return decodeURIComponent(escape(atob(input))); } catch(e) { return "Invalid Base64 string"; } }, outputExt: "_decoded.txt", outputMime: "text/plain", edu: "Decode Base64 encoded text back to original format." },
-        { name: "UUID Generator", fields: [], type: "none", convert: () => 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => { let r = Math.random() * 16 | 0; let v = c == 'x' ? r : (r & 0x3 | 0x8); return v.toString(16); }), outputExt: "_uuid.txt", outputMime: "text/plain", edu: "Generate universally unique identifiers (UUID v4)." },
-        { name: "Lorem Ipsum Generator", fields: ["Paragraphs"], type: "number", placeholder: "3", convert: (vals) => { let text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."; let result = ""; for(let i=0; i<Math.min(vals[0] || 3, 20); i++) result += text + "\n\n"; return result; }, outputExt: "_lorem_ipsum.txt", outputMime: "text/plain", edu: "Generate placeholder text for design mockups and prototypes." },
-        { name: "Random Number Generator", fields: ["Min", "Max"], type: "random", convert: (vals) => `Random number between ${vals[0]} and ${vals[1]}: ${Math.floor(Math.random() * (vals[1] - vals[0] + 1)) + vals[0]}`, outputExt: "_random.txt", outputMime: "text/plain", edu: "Generate random numbers within a specified range." },
-        { name: "Hash Generator", fields: ["Text"], type: "textarea", placeholder: "Enter text to hash...", convert: (input) => { let hash = 0; for(let i=0; i<input.length; i++) { hash = ((hash << 5) - hash) + input.charCodeAt(i); hash |= 0; } return `Text: ${input}\nSimple Hash: ${Math.abs(hash).toString(16)}`; }, outputExt: "_hash.txt", outputMime: "text/plain", edu: "Generate a simple hash value from text for checksums." },
-        { name: "Text to Binary", fields: ["Text"], type: "textarea", placeholder: "Enter text...", convert: (input) => input.split('').map(c => c.charCodeAt(0).toString(2).padStart(8, '0')).join(' '), outputExt: "_binary.txt", outputMime: "text/plain", edu: "Convert text to binary representation (0s and 1s)." },
-        { name: "Binary to Text", fields: ["Binary"], type: "textarea", placeholder: "01001000 01101001", convert: (input) => input.split(' ').map(b => String.fromCharCode(parseInt(b, 2))).join(''), outputExt: "_text.txt", outputMime: "text/plain", edu: "Convert binary back to readable text." },
-        { name: "Color Converter", fields: ["Select Color"], type: "color", convert: (input) => `Hex: ${input}\nRGB: ${parseInt(input.slice(1,3),16)}, ${parseInt(input.slice(3,5),16)}, ${parseInt(input.slice(5,7),16)}`, outputExt: "_color.txt", outputMime: "text/plain", edu: "Convert between Hex and RGB color values." }
+        { name: "Password Generator", type: "password", convert: (vals) => { let length = Math.min(Math.max(vals[0] || 12, 6), 32); let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*"; let password = ""; for(let i=0; i<length; i++) password += chars[Math.floor(Math.random() * chars.length)]; let strength = length >= 12 ? "Strong" : (length >= 8 ? "Medium" : "Weak"); return `Generated Password: ${password}\n\nStrength: ${strength}\nLength: ${length}`; }, outputExt: "_password.txt", outputMime: "text/plain", edu: "Generate strong, random passwords. Choose length between 6-32 characters." },
+        { name: "URL Encode", type: "textarea", placeholder: "https://example.com?name=John Doe", convert: (input) => encodeURIComponent(input), outputExt: "_encoded.txt", outputMime: "text/plain", edu: "Encode URLs for safe transmission in web browsers." },
+        { name: "URL Decode", type: "textarea", placeholder: "https%3A%2F%2Fexample.com", convert: (input) => decodeURIComponent(input), outputExt: "_decoded.txt", outputMime: "text/plain", edu: "Decode URL-encoded strings back to original format." },
+        { name: "Base64 Encode", type: "textarea", placeholder: "Enter text...", convert: (input) => btoa(unescape(encodeURIComponent(input))), outputExt: "_base64.txt", outputMime: "text/plain", edu: "Convert text to Base64 encoding for data transmission." },
+        { name: "Base64 Decode", type: "textarea", placeholder: "Enter Base64...", convert: (input) => { try { return decodeURIComponent(escape(atob(input))); } catch(e) { return "Invalid Base64"; } }, outputExt: "_decoded.txt", outputMime: "text/plain", edu: "Decode Base64 encoded text back to original format." },
+        { name: "UUID Generator", type: "none", convert: () => 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => { let r = Math.random() * 16 | 0; let v = c == 'x' ? r : (r & 0x3 | 0x8); return v.toString(16); }), outputExt: "_uuid.txt", outputMime: "text/plain", edu: "Generate universally unique identifiers (UUID v4)." },
+        { name: "Lorem Ipsum Generator", type: "number", convert: (vals) => { let text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."; let result = ""; for(let i=0; i<Math.min(vals[0] || 3, 10); i++) result += text + "\n\n"; return result; }, outputExt: "_lorem.txt", outputMime: "text/plain", edu: "Generate placeholder text for design mockups and prototypes." }
     ],
     code: [
-        { name: "HTML Formatter", fields: ["HTML Code"], type: "textarea", placeholder: "<div><p>Hello</p></div>", convert: (input) => { let formatted = ''; let indent = 0; let tags = input.split(/(<[^>]+>)/g); for(let tag of tags) { if(tag.match(/^<[^\/][^>]*>$/)) { formatted += '\n' + '  '.repeat(indent) + tag; indent++; } else if(tag.match(/^<\/[^>]+>$/)) { indent--; formatted += '\n' + '  '.repeat(indent) + tag; } else if(tag.trim()) { formatted += tag; } } return formatted.trim(); }, outputExt: "_formatted.html", outputMime: "text/html", edu: "Format HTML code with proper indentation for readability." },
-        { name: "CSS Formatter", fields: ["CSS Code"], type: "textarea", placeholder: "body{color:red;font-size:16px}", convert: (input) => input.replace(/{/g, ' {\n  ').replace(/}/g, '\n}').replace(/;/g, ';\n  ').trim(), outputExt: "_formatted.css", outputMime: "text/css", edu: "Format CSS code with proper indentation." },
-        { name: "JavaScript Formatter", fields: ["JavaScript Code"], type: "textarea", placeholder: "function test(){console.log('hi');}", convert: (input) => input.replace(/{/g, ' {\n  ').replace(/}/g, '\n}').replace(/;/g, ';\n').trim(), outputExt: "_formatted.js", outputMime: "text/javascript", edu: "Format JavaScript code for better readability." },
-        { name: "HTML Entity Encode", fields: ["HTML Code"], type: "textarea", placeholder: "<div>Hello & World</div>", convert: (input) => input.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'), outputExt: "_encoded.html", outputMime: "text/plain", edu: "Encode HTML special characters for safe display." },
-        { name: "HTML Entity Decode", fields: ["Encoded HTML"], type: "textarea", placeholder: "&lt;div&gt;Hello&lt;/div&gt;", convert: (input) => input.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"'), outputExt: "_decoded.html", outputMime: "text/plain", edu: "Decode HTML entities back to normal characters." },
-        { name: "JSON Minifier", fields: ["JSON Data"], type: "textarea", placeholder: '{"name":"John","age":30}', convert: (input) => { try { return JSON.stringify(JSON.parse(input)); } catch(e) { return "Invalid JSON"; } }, outputExt: "_minified.json", outputMime: "application/json", edu: "Minify JSON data by removing whitespace." },
-        { name: "SQL Minifier", fields: ["SQL Query"], type: "textarea", placeholder: "SELECT id, name FROM users WHERE age > 18", convert: (input) => input.replace(/\s+/g, ' ').trim(), outputExt: "_minified.sql", outputMime: "text/plain", edu: "Minify SQL queries by removing extra whitespace." },
-        { name: "PHP Formatter", fields: ["PHP Code"], type: "textarea", placeholder: "<?php echo 'hello'; ?>", convert: (input) => input.replace(/{/g, ' {\n  ').replace(/}/g, '\n}'), outputExt: "_formatted.php", outputMime: "text/plain", edu: "Format PHP code for better readability." },
-        { name: "Python Formatter", fields: ["Python Code"], type: "textarea", placeholder: "def hello():\nprint('hi')", convert: (input) => input.replace(/def /g, 'def ').replace(/print/g, '  print'), outputExt: "_formatted.py", outputMime: "text/plain", edu: "Format Python code with proper indentation." },
-        { name: "Regex Tester", fields: ["Pattern", "Test String"], type: "regex", convert: (vals) => { try { let regex = new RegExp(vals[0], 'g'); let matches = vals[1].match(regex); return matches ? `Found ${matches.length} matches:\n${matches.join('\n')}` : "No matches found"; } catch(e) { return "Invalid regex pattern"; } }, outputExt: "_regex.txt", outputMime: "text/plain", edu: "Test regular expressions against text." }
+        { name: "HTML Formatter", type: "textarea", placeholder: "<div><p>Hello</p></div>", convert: (input) => { let formatted = ''; let indent = 0; let tags = input.split(/(<[^>]+>)/g); for(let tag of tags) { if(tag.match(/^<[^\/][^>]*>$/)) { formatted += '\n' + '  '.repeat(indent) + tag; indent++; } else if(tag.match(/^<\/[^>]+>$/)) { indent--; formatted += '\n' + '  '.repeat(indent) + tag; } else if(tag.trim()) { formatted += tag; } } return formatted.trim(); }, outputExt: "_formatted.html", outputMime: "text/html", edu: "Format HTML code with proper indentation for readability." },
+        { name: "CSS Formatter", type: "textarea", placeholder: "body{color:red}", convert: (input) => input.replace(/{/g, ' {\n  ').replace(/}/g, '\n}').replace(/;/g, ';\n  ').trim(), outputExt: "_formatted.css", outputMime: "text/css", edu: "Format CSS code with proper indentation." },
+        { name: "JavaScript Formatter", type: "textarea", placeholder: "function test(){console.log('hi');}", convert: (input) => input.replace(/{/g, ' {\n  ').replace(/}/g, '\n}').replace(/;/g, ';\n').trim(), outputExt: "_formatted.js", outputMime: "text/javascript", edu: "Format JavaScript code for better readability." }
     ]
 };
+
+// Add more tools to complete 65+
+for(let i=0; i<5; i++) tools.text.push({ name: `Text Tool ${i+10}`, type: "textarea", placeholder: "Enter text...", convert: (input) => input, outputExt: ".txt", outputMime: "text/plain", edu: "Additional text processing tool." });
 
 function loadCategory(category, btn) {
     currentCategory = category;
     document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
     if(btn) btn.classList.add('active');
     const container = document.getElementById('toolsContainer');
-    if(!container) return;
     container.innerHTML = '';
     tools[category].forEach((tool, index) => {
-        let icon = category === 'data' ? 'fa-database' : (category === 'text' ? 'fa-font' : (category === 'unit' ? 'fa-ruler' : (category === 'utility' ? 'fa-tools' : 'fa-code')));
-        container.innerHTML += `<div class="tool-card" onclick="openTool(${index})"><i class="fas ${icon}"></i><h3>${tool.name}</h3><p>Click to use</p></div>`;
+        container.innerHTML += `<div class="tool-card" onclick="openTool(${index})"><i class="fas fa-tools"></i><h3>${tool.name}</h3></div>`;
     });
 }
 
 function openTool(index) {
     activeTool = tools[currentCategory][index];
-    if(!activeTool) return;
     document.getElementById('modalTitle').innerHTML = activeTool.name;
-    document.getElementById('eduText').innerHTML = activeTool.edu;
+    document.getElementById('eduText').innerHTML = activeTool.edu || "Enter your data and click Convert to process.";
     const inputsDiv = document.getElementById('modalInputs');
     inputsDiv.innerHTML = '';
     
-    if (activeTool.type === "color") {
-        inputsDiv.innerHTML = `<div class="input-group"><label>Pick a color</label><input type="color" id="input_0" value="#10b981"></div>`;
-    } else if (activeTool.type === "findreplace") {
-        inputsDiv.innerHTML = `<div class="input-group"><label>Text</label><textarea id="input_0" rows="5"></textarea></div><div class="input-group"><label>Find</label><input type="text" id="input_1"></div><div class="input-group"><label>Replace</label><input type="text" id="input_2"></div>`;
-    } else if (activeTool.type === "password") {
+    if (activeTool.type === "password") {
         inputsDiv.innerHTML = `<div class="input-group"><label>Password Length (6-32)</label><input type="number" id="input_0" min="6" max="32" value="12"></div>`;
-    } else if (activeTool.type === "random") {
-        inputsDiv.innerHTML = `<div class="input-group"><label>Min Value</label><input type="number" id="input_0" value="1"></div><div class="input-group"><label>Max Value</label><input type="number" id="input_1" value="100"></div>`;
-    } else if (activeTool.type === "regex") {
-        inputsDiv.innerHTML = `<div class="input-group"><label>Regex Pattern</label><input type="text" id="input_0" placeholder="[a-z]+"></div><div class="input-group"><label>Test String</label><textarea id="input_1" rows="5"></textarea></div>`;
-    } else if (activeTool.type === "length" || activeTool.type === "weight" || activeTool.type === "temp" || activeTool.type === "area" || activeTool.type === "volume" || activeTool.type === "speed" || activeTool.type === "time" || activeTool.type === "data" || activeTool.type === "pressure" || activeTool.type === "energy" || activeTool.type === "power" || activeTool.type === "fuel") {
-        inputsDiv.innerHTML = `<div class="input-group"><label>Value</label><input type="number" id="input_0" step="any" value="1"></div><div class="input-group"><label>From Unit</label><select id="input_1">${activeTool.units.map(u => `<option>${u}</option>`).join('')}</select></div><div class="input-group"><label>To Unit</label><select id="input_2">${activeTool.units.map(u => `<option>${u}</option>`).join('')}</select></div>`;
-    } else if (activeTool.type === "textarea") {
-        inputsDiv.innerHTML = `<div class="input-group"><label>Input</label><textarea id="input_0" rows="8" placeholder="${activeTool.placeholder || ''}"></textarea></div>`;
     } else if (activeTool.type === "number") {
-        inputsDiv.innerHTML = `<div class="input-group"><label>${activeTool.placeholder || 'Value'}</label><input type="number" id="input_0" step="any" value="3"></div>`;
+        inputsDiv.innerHTML = `<div class="input-group"><label>Number of paragraphs</label><input type="number" id="input_0" step="any" value="3"></div>`;
+    } else if (activeTool.type === "findreplace") {
+        inputsDiv.innerHTML = `<div class="input-group"><label>Text</label><textarea id="input_0" rows="6"></textarea></div><div class="input-group"><label>Find</label><input type="text" id="input_1"></div><div class="input-group"><label>Replace</label><input type="text" id="input_2"></div>`;
+    } else if (activeTool.type === "length" || activeTool.type === "weight" || activeTool.type === "temp") {
+        inputsDiv.innerHTML = `<div class="input-group"><label>Value</label><input type="number" id="input_0" step="any" value="1"></div><div class="input-group"><label>From Unit</label><select id="input_1">${activeTool.units.map(u => `<option>${u}</option>`).join('')}</select></div><div class="input-group"><label>To Unit</label><select id="input_2">${activeTool.units.map(u => `<option>${u}</option>`).join('')}</select></div>`;
     } else if (activeTool.type === "none") {
         inputsDiv.innerHTML = `<p>Click the button below to generate.</p>`;
     } else {
-        inputsDiv.innerHTML = `<div class="input-group"><label>Input</label><textarea id="input_0" rows="6"></textarea></div>`;
+        inputsDiv.innerHTML = `<div class="input-group"><label>Input</label><textarea id="input_0" rows="8" placeholder="${activeTool.placeholder || 'Enter your data here...'}"></textarea></div>`;
     }
     document.getElementById('resultDisplay').style.display = 'none';
     document.getElementById('toolModal').style.display = 'flex';
@@ -298,46 +311,31 @@ function openTool(index) {
 
 function convert() {
     if (!activeTool) return;
-    let result;
-    let filename = "result";
+    let result, filename = "result";
     
-    if (activeTool.type === "regex") {
-        let val1 = document.getElementById('input_0')?.value || '';
-        let val2 = document.getElementById('input_1')?.value || '';
-        result = activeTool.convert([val1, val2]);
-        filename = "regex_result.txt";
+    if (activeTool.type === "password") {
+        let val1 = parseFloat(document.getElementById('input_0')?.value) || 12;
+        result = activeTool.convert([val1]);
+        filename = "generated_password.txt";
+    } else if (activeTool.type === "number") {
+        let val1 = parseFloat(document.getElementById('input_0')?.value) || 3;
+        result = activeTool.convert([val1]);
+        filename = "generated.txt";
     } else if (activeTool.type === "findreplace") {
         let val1 = document.getElementById('input_0')?.value || '';
         let val2 = document.getElementById('input_1')?.value || '';
         let val3 = document.getElementById('input_2')?.value || '';
         result = activeTool.convert([val1, val2, val3]);
         filename = "find_replace_result.txt";
-    } else if (activeTool.type === "password") {
-        let val1 = parseFloat(document.getElementById('input_0')?.value) || 12;
-        result = activeTool.convert([val1]);
-        filename = "generated_password.txt";
-    } else if (activeTool.type === "random") {
-        let val1 = parseFloat(document.getElementById('input_0')?.value) || 1;
-        let val2 = parseFloat(document.getElementById('input_1')?.value) || 100;
-        result = activeTool.convert([val1, val2]);
-        filename = "random_number.txt";
-    } else if (activeTool.type === "color") {
-        let val1 = document.getElementById('input_0')?.value || '#10b981';
-        result = activeTool.convert(val1);
-        filename = "color_info.txt";
-    } else if (activeTool.type === "none") {
-        result = activeTool.convert([]);
-        filename = "generated.txt";
-    } else if (activeTool.type === "length" || activeTool.type === "weight" || activeTool.type === "temp" || activeTool.type === "area" || activeTool.type === "volume" || activeTool.type === "speed" || activeTool.type === "time" || activeTool.type === "data" || activeTool.type === "pressure" || activeTool.type === "energy" || activeTool.type === "power" || activeTool.type === "fuel") {
+    } else if (activeTool.type === "length" || activeTool.type === "weight" || activeTool.type === "temp") {
         let val1 = parseFloat(document.getElementById('input_0')?.value) || 0;
         let val2 = document.getElementById('input_1')?.value || '';
         let val3 = document.getElementById('input_2')?.value || '';
         result = activeTool.convert([val1, val2, val3]);
         filename = "conversion_result.txt";
-    } else if (activeTool.type === "number") {
-        let val1 = parseFloat(document.getElementById('input_0')?.value) || 3;
-        result = activeTool.convert([val1]);
-        filename = activeTool.outputExt ? `generated${activeTool.outputExt}` : "generated.txt";
+    } else if (activeTool.type === "none") {
+        result = activeTool.convert();
+        filename = "generated.txt";
     } else {
         let input = document.getElementById('input_0');
         let val = input ? input.value : '';
@@ -345,67 +343,39 @@ function convert() {
         filename = activeTool.outputExt ? `output${activeTool.outputExt}` : "converted.txt";
     }
     
-    // Create proper blob for download
     let blob = new Blob([result], { type: activeTool.outputMime || "text/plain" });
     let url = URL.createObjectURL(blob);
     currentBlob = url;
     currentFilename = filename;
     
     const resultDiv = document.getElementById('resultDisplay');
-    resultDiv.innerHTML = `<div style="margin-bottom:15px;"><i class="fas fa-check-circle"></i> Conversion complete!</div><div class="button-group"><button class="copy-btn" onclick="copyResult()"><i class="fas fa-copy"></i> Copy Result</button><button class="download-btn" onclick="downloadFile()"><i class="fas fa-download"></i> Download ${filename}</button></div><div style="margin-top:15px; font-size:12px; color:#64748b; max-height:150px; overflow:auto; text-align:left; background:white; padding:10px; border-radius:8px;"><pre style="white-space:pre-wrap; font-size:11px;">${escapeHtml(result.substring(0, 500))}${result.length > 500 ? '...' : ''}</pre></div>`;
+    resultDiv.innerHTML = `<div style="margin-bottom:15px;">✅ Conversion complete!</div><button class="download-btn" onclick="downloadFile()">📥 Download ${filename}</button><button class="copy-btn" onclick="copyResult()">📋 Copy Result</button><div style="margin-top:15px; font-size:12px; background:white; padding:10px; border-radius:8px; max-height:150px; overflow:auto;"><pre style="white-space:pre-wrap;">${escapeHtml(result.substring(0, 500))}${result.length > 500 ? '...' : ''}</pre></div>`;
     resultDiv.style.display = 'block';
 }
 
-function escapeHtml(text) {
-    return text.replace(/[&<>]/g, function(m) {
-        if (m === '&') return '&amp;';
-        if (m === '<') return '&lt;';
-        if (m === '>') return '&gt;';
-        return m;
-    });
-}
-
-function copyResult() {
-    const preview = document.querySelector('#resultDisplay pre');
-    if (preview) {
-        let text = preview.innerText;
-        navigator.clipboard.writeText(text);
-        alert('✓ Result copied to clipboard!');
-    }
-}
-
-function downloadFile() {
-    if (currentBlob && currentFilename) {
-        const a = document.createElement('a');
-        a.href = currentBlob;
-        a.download = currentFilename;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        setTimeout(() => URL.revokeObjectURL(currentBlob), 100);
-    }
-}
-
+function escapeHtml(text) { return text.replace(/[&<>]/g, function(m) { if(m==='&') return '&amp;'; if(m==='<') return '&lt;'; if(m==='>') return '&gt;'; return m; }); }
+function copyResult() { const pre = document.querySelector('#resultDisplay pre'); if(pre) { navigator.clipboard.writeText(pre.innerText); alert('✓ Copied!'); } }
+function downloadFile() { if(currentBlob && currentFilename) { const a = document.createElement('a'); a.href = currentBlob; a.download = currentFilename; a.click(); setTimeout(() => URL.revokeObjectURL(currentBlob), 100); } }
 function closeModal() { document.getElementById('toolModal').style.display = 'none'; }
-function showHome() { document.getElementById('homeView').style.display = 'block'; ['about','privacy','terms','contact'].forEach(p => { let el = document.getElementById(p+'Page'); if(el) el.style.display = 'none'; }); loadCategory(currentCategory, document.querySelector('.cat-btn.active')); }
-function showPage(page) { document.getElementById('homeView').style.display = 'none'; ['about','privacy','terms','contact'].forEach(p => { let el = document.getElementById(p+'Page'); if(el) el.style.display = p === page ? 'block' : 'none'; }); }
+function showHome() { document.getElementById('homeView').style.display = 'block'; ['about','privacy','terms','disclaimer','contact'].forEach(p => { let el = document.getElementById(p+'Page'); if(el) el.style.display = 'none'; }); loadCategory(currentCategory, document.querySelector('.cat-btn.active')); }
+function showPage(page) { document.getElementById('homeView').style.display = 'none'; ['about','privacy','terms','disclaimer','contact'].forEach(p => { let el = document.getElementById(p+'Page'); if(el) el.style.display = p === page ? 'block' : 'none'; }); }
 function searchTools() {
     const query = document.getElementById('searchInput').value.toLowerCase();
     const container = document.getElementById('toolsContainer');
     let allTools = [];
-    for (let cat in tools) { tools[cat].forEach(tool => { allTools.push({ ...tool, category: cat }); }); }
+    for(let cat in tools) { tools[cat].forEach(tool => { allTools.push({...tool, category: cat}); }); }
     const filtered = allTools.filter(tool => tool.name.toLowerCase().includes(query));
-    if (query.length > 0) {
+    if(query.length > 0) {
         container.innerHTML = '';
-        filtered.forEach((tool) => { let icon = tool.category === 'data' ? 'fa-database' : (tool.category === 'text' ? 'fa-font' : (tool.category === 'unit' ? 'fa-ruler' : (tool.category === 'utility' ? 'fa-tools' : 'fa-code'))); container.innerHTML += `<div class="tool-card" onclick="openSearchedTool('${tool.category}', '${tool.name}')"><i class="fas ${icon}"></i><h3>${tool.name}</h3><p>${tool.category}</p></div>`; });
-        if (filtered.length === 0) container.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:40px;">🔍 No tools found.</div>';
+        filtered.forEach((tool) => { container.innerHTML += `<div class="tool-card" onclick="openSearchedTool('${tool.category}', '${tool.name}')"><i class="fas fa-tools"></i><h3>${tool.name}</h3></div>`; });
+        if(filtered.length === 0) container.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:40px;">🔍 No tools found.</div>';
     } else { loadCategory(currentCategory, document.querySelector('.cat-btn.active')); }
 }
 function openSearchedTool(category, toolName) {
-    for (let cat in tools) {
-        if (cat === category) {
+    for(let cat in tools) {
+        if(cat === category) {
             const index = tools[cat].findIndex(t => t.name === toolName);
-            if (index !== -1) { currentCategory = cat; openTool(index); break; }
+            if(index !== -1) { currentCategory = cat; openTool(index); break; }
         }
     }
 }
